@@ -18,6 +18,7 @@ import TrainingPreview from '../components/TrainingPreview'
 import SolarCalculator from '../components/SolarCalculator'
 import HomeFAQ from '../components/HomeFAQ'
 import SolarPackages from '../components/SolarPackages'
+import LocationMap from '../components/LocationMap'
 
 const Home = () => {
   return (
@@ -37,6 +38,7 @@ const Home = () => {
       <OurTeam /> 
       <HomeFAQ />
       <USPsection />
+      <LocationMap />
 
       {/* <FeaturedSection /> */}
       {/* <OurPolicy/> */}
