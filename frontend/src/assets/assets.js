@@ -1,3 +1,9 @@
+import solar6 from './solar6.jpg'
+import solar5 from './solar5.jpg'
+import solar4 from './solar4.jpg'
+import solar3 from './solar3.jpg'
+import solar2 from './solar2.webp'
+import solar1 from './solar1.jpg'
 import sunpeaklogo from './sunpeaklogo.png'
 import blogo from './blogo.jpg'
 import defaultProfileImage from './defaultProfileImage.png'
@@ -22,6 +28,12 @@ import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 
 export const assets = {
+    solar6,
+    solar5,
+    solar4,
+    solar3,
+    solar2,
+    solar1,
     sunpeaklogo,
     blogo,
     defaultProfileImage,

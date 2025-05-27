@@ -89,7 +89,7 @@ const HeroSection = () => {
                 <div className="w-3/4 h-3/4 bg-[var(--primary-neon)]/10 rounded-full animate-pulse" />
               </div>
               <img 
-                src={assets.solar_panel} 
+                src={assets.solar1} 
                 alt="Solar panel" 
                 className="relative z-10 w-full h-full object-contain animate-float" 
               />
