@@ -144,7 +144,7 @@ const HeroSection = () => {
       </div>
 
       {/* Brand Partnerships */}
-      <div className="mt-24 border-t border-[var(--border)] pt-12">
+      {/* <div className="mt-24 border-t border-[var(--border)] pt-12">
         <div className="flex flex-wrap justify-center gap-8 opacity-90 hover:opacity-100 transition-opacity">
           {[assets.brand1, assets.brand2, assets.brand3, assets.brand4].map((logo, index) => (
             <img 
@@ -155,7 +155,7 @@ const HeroSection = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
