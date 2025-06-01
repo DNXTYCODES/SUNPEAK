@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const TrainingPreview = () => {
   const upcomingClasses = [
-    { date: 'October 15-30, 2024', location: 'Lagos Mainland', type: 'Installation Certification' },
-    { date: 'November 5-10, 2024', location: 'Abuja Central', type: 'Maintenance Technician' },
-    { date: 'To be announced', location: 'Port Harcourt', type: 'Sales Professional' }
+    // { date: 'October 15-30, 2024', location: 'Lagos Mainland', type: 'Installation Certification' },
+    // { date: 'November 5-10, 2024', location: 'Abuja Central', type: 'Maintenance Technician' },
+    { date: 'To be announced', location: 'Benin', type: 'Sales Professional' }
   ];
 
   const courses = [
@@ -93,7 +93,9 @@ const TrainingPreview = () => {
                   <p className="text-[var(--text-muted)]">{cls.type} - {cls.location}</p>
                 </div>
                 <button className="px-4 py-2 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)] hover:text-[var(--bg)] transition-colors duration-300">
-                  Notify Me
+                  <a  href="https://wa.me/2348060771104">
+                  Inquiry
+                  </a>
                 </button>
               </div>
             ))}
@@ -101,7 +103,7 @@ const TrainingPreview = () => {
         </div>
 
         {/* Training Gallery Section */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h3 className="text-2xl font-bold text-[var(--text)] mb-8">Past Class Highlights</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {courses.flatMap(course => course.gallery).map((img, index) => (
@@ -116,10 +118,9 @@ const TrainingPreview = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
-        {/* Courses Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, index) => (
             <article 
               key={index}
@@ -129,7 +130,6 @@ const TrainingPreview = () => {
               itemProp="hasCourseInstance"
               itemType="https://schema.org/CourseInstance"
             >
-              {/* Course Media */}
               <div className="mb-6">
                 {course.videoId ? (
                   <div className="aspect-video rounded-lg overflow-hidden">
@@ -168,24 +168,24 @@ const TrainingPreview = () => {
                   {course.description}
                 </p>
                 <div className="mt-auto">
-                  {/* <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center justify-between mb-6">
                     <span className="text-sm text-[var(--primary-neon)]">
                       {course.duration}
                     </span>
-                  </div> */}
-                  {/* <Link
+                  </div>
+                  <Link
                     to="/training-enroll"
                     className="w-full px-6 py-3 border-2 border-[var(--primary-neon)] bg-[var(--primary-neon)/10] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)] hover:text-[var(--bg)] transition-colors duration-300 font-medium text-center"
                     aria-label={`Enroll in ${course.title}`}
                     itemProp="url"
                   >
                     Enroll Now
-                  </Link> */}
+                  </Link>
                 </div>
               </div>
             </article>
           ))}
-        </div>
+        </div> */}
 
         {/* Full Curriculum CTA */}
         {/* <div className="text-center mt-12">

@@ -1,8 +1,15 @@
+import thumbnail from './thumbnail.png'
+import solarvid3 from './solarvid3.mp4'
+import solarvid2 from './solarvid2.mp4'
+import solarvid1 from './solarvid1.mp4'
+import solarteam from './solarteam.jpg'
+import solar8 from './solar8.jpg'
+import solar7 from './solar7.jpg'
 import solar6 from './solar6.jpg'
 import solar5 from './solar5.jpg'
 import solar4 from './solar4.jpg'
 import solar3 from './solar3.jpg'
-import solar2 from './solar2.webp'
+import solar2 from './solar2.jpg'
 import solar1 from './solar1.jpg'
 import sunpeaklogo from './sunpeaklogo.png'
 import blogo from './blogo.jpg'
@@ -28,6 +35,13 @@ import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 
 export const assets = {
+    thumbnail,
+    solarvid3,
+    solarvid2,
+    solarvid1,
+    solarteam,
+    solar8,
+    solar7,
     solar6,
     solar5,
     solar4,

@@ -4,7 +4,7 @@ import { assets } from '../assets/assets';
 
 const BackgroundSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [assets.solar1, assets.solar2, assets.solar3, assets.solar4];
+  const slides = [assets.solarteam, assets.solar7, assets.solar5, assets.solar8];
 
   useEffect(() => {
     const interval = setInterval(() => {

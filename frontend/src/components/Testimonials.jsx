@@ -1,4 +1,5 @@
 import React from 'react';
+import { assets } from '../assets/assets';
 
 const Testimonials = () => {
   const testimonials = [
@@ -6,21 +7,21 @@ const Testimonials = () => {
       name: 'Adebayo Okon',
       role: 'Homeowner, Lagos',
       text: 'SunPeak transformed our power situation completely. From 2 hours of electricity daily to 24/7 solar power - life changing!',
-      image: 'adebayo.jpg',
+      image: assets.solar7,
       location: 'Victoria Island, Lagos'
     },
     {
       name: 'Ngozi Chukwu',
       role: 'Restaurant Owner',
       text: 'Our diesel costs dropped 80% after solar installation. Best investment for our Abuja restaurant!',
-      image: 'ngozi.jpg',
+      image: assets.solar8,
       location: 'Garki, Abuja'
     },
     {
       name: 'Emeka Industries',
       role: 'Manufacturing Company',
       text: '1MW solar plant installed with zero downtime. Professional team that understood industrial needs.',
-      image: 'emeka-industries.jpg',
+      image: assets.solar2 ,
       location: 'Onne, Rivers State'
     }
   ];
@@ -52,19 +53,20 @@ const Testimonials = () => {
             >
               <div className="flex flex-col items-center text-center mb-6">
                 <img 
-                  src={`/clients/${testimonial.image}`} 
+                  // src={`/clients/${testimonial.image}`} 
+                  src={`${testimonial.image}`} 
                   alt={testimonial.name} 
                   className="w-20 h-20 rounded-full mb-4 object-cover border-2 border-[var(--primary-neon)]"
                   loading="lazy"
                   width="80"
                   height="80"
                 />
-                <img 
+                {/* <img 
                   src="/nigeria-flag.svg" 
                   alt="Nigerian flag" 
                   className="w-6 h-6 mb-2" 
                   aria-hidden="true"
-                />
+                /> */}
                 <span className="text-sm text-[var(--text-muted)]">
                   {testimonial.location}
                 </span>
@@ -99,22 +101,23 @@ const Testimonials = () => {
               controls 
               className="w-full h-full object-cover"
               poster="/video-thumbnail.jpg"
-              aria-label="Customer testimonial video from Kano"
+              aria-label="Customer testimonial video from Ugbowo"
             >
-              <source src="/testimonial-kano.mp4" type="video/mp4" />
+              {/* <source src="/testimonial-kano.mp4" type="video/mp4" /> */}
+              <source src={assets.solarvid2} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <p className="mt-4 text-center text-[var(--text-muted)]">
-            Mallam Ibrahim's Solar Journey - Kano State
+            Mr David - Ugbowo
           </p>
         </div>
 
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <button className="px-8 py-3 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)/10] transition-colors font-medium">
             Share Your Story
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -96,7 +96,7 @@ const SolarPackages = () => {
               </ul>
 
               <a
-                href="https://wa.me/2348118532900"
+                href="https://wa.me/2348060771104"
                 className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[var(--primary-neon)] text-[var(--bg)] rounded-lg font-bold hover:shadow-glow"
               >
                 <FaWhatsapp /> Get This Package
@@ -111,7 +111,7 @@ const SolarPackages = () => {
           </p>
           <div className="flex justify-center gap-4">
             <a
-              href="tel:+2348118532900"
+              href="tel:+2348060771104"
               className="flex items-center gap-2 px-6 py-2 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)/10]"
             >
               <FaPhoneAlt /> Call for Custom Quote

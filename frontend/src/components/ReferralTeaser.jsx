@@ -59,14 +59,15 @@ const ReferralTeaser = () => {
           </ul>
         </div>
 
-        <Link
-          to="/referral-program"
+        <a
+          // to="/referral-program"
+           href="https://wa.me/2348060771104"
           className="inline-block px-8 py-4 bg-[var(--primary-neon)] text-[var(--bg)] rounded-xl font-bold text-lg hover:shadow-[0_0_25px_-5px_var(--primary-neon)] hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-[var(--primary-neon)]"
           aria-label="Join the SunPeak Referral Program"
           itemProp="url"
         >
           Start Earning Today →
-        </Link>
+        </a>
 
         {/* Schema Microdata */}
         <div itemScope itemProp="offeredBy" itemType="https://schema.org/Organization" className="hidden">

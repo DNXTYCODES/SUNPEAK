@@ -2,16 +2,18 @@ import React from 'react';
 import { FaLinkedin, FaSun, FaSolarPanel, FaTools, FaUserGraduate, FaLightbulb } from 'react-icons/fa';
 import Title from './Title';
 import { Link } from 'react-router-dom';
+import { assets } from '../assets/assets';
 
 const OurTeam = () => {
   const teamMembers = [
     {
       id: 1,
-      name: 'Amina Abdullahi',
+      name: 'Mr Abraham',
       role: 'CEO & Founder',
       bio: `Renewable energy expert with 15+ years in solar solutions. Founded SunPeak to empower Nigerian communities through sustainable energy. NERC-certified energy consultant.`,
       expertise: ['Strategic Planning', 'Government Compliance', 'Sustainable Development'],
-      photo: 'team-ceo.jpg',
+      // photo: assets.solar6,
+      photo: assets.solar6,
       linkedin: '#'
     },
     {
@@ -47,7 +49,9 @@ const OurTeam = () => {
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[var(--bg)]" itemScope itemType="https://schema.org/Organization">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fadeIn">
-          <Title text1="ENERGY" text2="LEADERS" />
+          {/* <Title text1="ENERGY" text2="LEADERS" /> */}
+          
+            <h2 className="text-3xl md:text-4xl font-bold">Our Team</h2>
           <p className="mt-4 text-xl text-[var(--text-muted)]">
             The team powering Nigeria's solar revolution
           </p>
@@ -63,7 +67,8 @@ const OurTeam = () => {
             >
               <div className="relative group mb-4">
                 <img 
-                  src={`/team/${member.photo}`} 
+                  // src={`/team/${member.photo}`} 
+                  src={`${member.photo}`} 
                   alt={`${member.name} - Solar Expert at SunPeak`}
                   className="w-full h-64 object-cover rounded-lg"
                   loading="lazy"

@@ -104,7 +104,7 @@ const About = () => {
         </div>
 
         {/* Team Section */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h2 className="text-3xl font-bold text-[var(--text)] mb-8 text-center">Leadership Team</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member, index) => (
@@ -134,7 +134,7 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Certifications */}
         <div className="mb-16">
