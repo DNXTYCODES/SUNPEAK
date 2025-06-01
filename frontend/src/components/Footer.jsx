@@ -61,7 +61,7 @@ const Footer = () => {
             <ul className="space-y-2 text-[var(--text-muted)]">
               <li>
                 <a href="tel:+2348060771104" className="hover:text-[var(--primary-neon)]">
-                  +234 811 853 2900
+                  +234 806 077 1104
                 </a>
               </li>
               <li>
@@ -69,8 +69,8 @@ const Footer = () => {
                   info@sunpeak.ng
                 </a>
               </li>
-              <li>12 Solar Avenue</li>
-              <li>Victoria Island, Lagos</li>
+              <li>27 First East Circular Road,</li>
+              <li>Benin, Edo</li>
             </ul>
           </div>
         </div>
