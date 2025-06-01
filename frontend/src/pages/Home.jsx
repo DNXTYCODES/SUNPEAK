@@ -26,13 +26,13 @@ const Home = () => {
 
       <HeroSection />
       {/* <ServicesHighlight /> */}
+      <Testimonials/>
       <LatestCollection/>
       <BestSeller/>
       <SolarPackages />
       {/* <DeliveryPickup/> */}
       <Chatbot/>
       <SolarCalculator />
-      <Testimonials/>
       <ReferralTeaser />
       <TrainingPreview />
       <OurTeam /> 
