@@ -17,6 +17,7 @@ import SolarPackagesPage from "./pages/SolarPackagesPage";
 import SolarCalculatorPage from "./pages/SolarCalculatorPage";
 
 const App = () => {
+  
   return (
     <div className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)] transition-colors duration-300">
       <ToastContainer 
