@@ -81,27 +81,31 @@ const Collection = () => {
 
   // Solar loading animation component
   const SolarLoader = () => (
-    <div className="flex justify-center items-center py-16 col-span-full">
-      <div className="relative w-20 h-20">
-        {/* Sun core */}
-        <div className="absolute inset-0 rounded-full bg-[var(--primary-neon)] animate-pulse"></div>
-        
-        {/* Sun rays */}
-        {[...Array(8)].map((_, i) => (
-          <div 
-            key={i}
-            className="absolute top-1/2 left-1/2 w-2 h-8 bg-[var(--primary-neon)] rounded-full"
-            style={{
-              transform: `rotate(${i * 45}deg) translateY(-30px)`,
-              transformOrigin: '0 0',
-              opacity: 0.7,
-              animation: `pulse 1.5s ease-in-out infinite ${i * 0.1}s`
-            }}
-          ></div>
-        ))}
-      </div>
+  <div className="flex flex-col justify-center items-center py-16 col-span-full">
+    <div className="relative w-20 h-20 mb-4">
+      {/* Sun core */}
+      <div className="absolute inset-0 rounded-full bg-[var(--primary-neon)] animate-pulse"></div>
+      
+      {/* Sun rays */}
+      {[...Array(8)].map((_, i) => (
+        <div 
+          key={i}
+          className="absolute top-1/2 left-1/2 w-2 h-8 bg-[var(--primary-neon)] rounded-full"
+          style={{
+            transform: `rotate(${i * 45}deg) translateY(-30px)`,
+            transformOrigin: '0 0',
+            opacity: 0.7,
+            animation: `pulse 1.5s ease-in-out infinite ${i * 0.1}s`
+          }}
+        ></div>
+      ))}
     </div>
-  );
+    <p className="text-[var(--text-muted)] text-center">
+      Loading solar products...<br/>Please wait
+    </p>
+  </div>
+);
+
 
   useEffect(() => {
     if (products.length > 0) {
