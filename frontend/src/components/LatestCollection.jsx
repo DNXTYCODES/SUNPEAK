@@ -1,4 +1,3 @@
-// LatestCollection.jsx
 import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import ProductItem from "./ProductItem";
@@ -6,10 +5,40 @@ import ProductItem from "./ProductItem";
 const LatestCollection = () => {
   const { products } = useContext(ShopContext);
   const [latestProducts, setLatestProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setLatestProducts(products.slice(0, 10));
+    if (products.length > 0) {
+      setLatestProducts(products.slice(0, 10));
+      setIsLoading(false);
+    } else {
+      setIsLoading(true);
+    }
   }, [products]);
+
+  // Solar loading animation component
+  const SolarLoader = () => (
+    <div className="flex justify-center items-center py-16">
+      <div className="relative w-20 h-20">
+        {/* Sun core */}
+        <div className="absolute inset-0 rounded-full bg-[var(--primary-neon)] animate-pulse"></div>
+        
+        {/* Sun rays */}
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute top-1/2 left-1/2 w-2 h-8 bg-[var(--primary-neon)] rounded-full"
+            style={{
+              transform: `rotate(${i * 45}deg) translateY(-30px)`,
+              transformOrigin: '0 0',
+              opacity: 0.7,
+              animation: `pulse 1.5s ease-in-out infinite ${i * 0.1}s`
+            }}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <section className="py-16 bg-[var(--bg)] transition-colors duration-300">
@@ -32,36 +61,40 @@ const LatestCollection = () => {
           </div>
         </header>
 
-        {/* Product grid with schema markup */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6"
-             itemScope itemType="https://schema.org/ItemList">
-          {latestProducts.map((item, index) => (
-            <article key={index} itemScope itemType="https://schema.org/Product"
-                     className="bg-[var(--card-bg)] border border-[var(--border)] rounded-xl">
-              <ProductItem
-                id={item._id}
-                name={item.name}
-                image={item.image}
-                price={item.price}
-                itemProp="itemListElement"
-              />
-              {/* Structured data for search engines */}
-              <meta itemProp="position" content={index + 1} />
-              <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
-                <meta itemProp="priceCurrency" content="NGN" />
-                <meta itemProp="price" content={item.price} />
-                <link itemProp="availability" href="https://schema.org/InStock" />
-              </div>
-            </article>
-          ))}
-        </div>
+        {/* Loading state */}
+        {isLoading ? (
+          <SolarLoader />
+        ) : (
+          /* Product grid with schema markup */
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6"
+              itemScope itemType="https://schema.org/ItemList">
+            {latestProducts.map((item, index) => (
+              <article key={index} itemScope itemType="https://schema.org/Product"
+                      className="bg-[var(--card-bg)] border border-[var(--border)] rounded-xl">
+                <ProductItem
+                  id={item._id}
+                  name={item.name}
+                  image={item.image}
+                  price={item.price}
+                  itemProp="itemListElement"
+                />
+                {/* Structured data for search engines */}
+                <meta itemProp="position" content={index + 1} />
+                <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
+                  <meta itemProp="priceCurrency" content="NGN" />
+                  <meta itemProp="price" content={item.price} />
+                  <link itemProp="availability" href="https://schema.org/InStock" />
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
 export default LatestCollection;
-
 
 
 
