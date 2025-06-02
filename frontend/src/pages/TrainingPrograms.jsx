@@ -82,7 +82,7 @@ const TrainingPrograms = () => {
                   Next schedule available upon request
                 </p>
                 <a
-                  href="https://wa.me/2348118532900"
+                  href="https://wa.me/2348060771104"
                   className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2 bg-[var(--primary-neon)] text-[var(--bg)] rounded-lg font-medium hover:shadow-glow"
                 >
                   <FaWhatsapp /> Get Schedule
@@ -100,7 +100,7 @@ const TrainingPrograms = () => {
           
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
             <a
-              href="https://wa.me/2348118532900"
+              href="https://wa.me/2348060771104"
               className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] hover:border-[var(--primary-neon)] transition-colors"
             >
               <div className="flex flex-col items-center gap-3">
@@ -111,13 +111,13 @@ const TrainingPrograms = () => {
             </a>
 
             <a
-              href="tel:+2348118532900"
+              href="tel:+2348060771104"
               className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] hover:border-[var(--primary-neon)] transition-colors"
             >
               <div className="flex flex-col items-center gap-3">
                 <FaPhoneAlt className="text-3xl text-[var(--primary-neon)]" />
                 <span className="text-[var(--text)]">Direct Call</span>
-                <span className="text-sm text-[var(--text-muted)]">+234 811 853 2900</span>
+                <span className="text-sm text-[var(--text-muted)]">+234 806 077 1104</span>
               </div>
             </a>
 

@@ -38,7 +38,7 @@ const Home = () => {
       <OurTeam /> 
       <HomeFAQ />
       <USPsection />
-      <LocationMap />
+      {/* <LocationMap /> */}
 
       {/* <FeaturedSection /> */}
       {/* <OurPolicy/> */}
