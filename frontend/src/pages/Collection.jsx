@@ -1,153 +1,195 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { ShopContext } from '../context/ShopContext'
-import { assets } from '../assets/assets';
-import Title from '../components/Title';
+import React, { useContext, useEffect, useState } from 'react';
+import { ShopContext } from '../context/ShopContext';
 import ProductItem from '../components/ProductItem';
+import { FaSolarPanel, FaBatteryThreeQuarters, FaPlug, FaLightbulb } from 'react-icons/fa';
+import { GiSolarPower } from 'react-icons/gi';
+import { BsSunFill } from 'react-icons/bs';
 
 const Collection = () => {
+  const { products, search, showSearch } = useContext(ShopContext);
+  const [showFilter, setShowFilter] = useState(false);
+  const [filterProducts, setFilterProducts] = useState([]);
+  const [category, setCategory] = useState([]);
+  const [sortType, setSortType] = useState('relavent');
+  const [isLoading, setIsLoading] = useState(true);
 
-  const { products , search , showSearch } = useContext(ShopContext);
-  const [showFilter,setShowFilter] = useState(false);
-  const [filterProducts,setFilterProducts] = useState([]);
-  const [category,setCategory] = useState([]);
-  // const [subCategory,setSubCategory] = useState([]);
-  const [sortType,setSortType] = useState('relavent')
+  // Solar categories from Add component
+  const solarCategories = [
+    'Solar Panels',
+    'Inverters',
+    'Batteries',
+    'Charge Controllers',
+    'Solar Kits',
+    'Mounting Systems',
+    'Solar Lighting',
+    'Accessories'
+  ];
 
-  const toggleCategory = (e) => {
+  const categoryIcons = {
+    'Solar Panels': <FaSolarPanel className="text-[var(--primary-neon)]" />,
+    'Inverters': <GiSolarPower className="text-[var(--primary-neon)]" />,
+    'Batteries': <FaBatteryThreeQuarters className="text-[var(--primary-neon)]" />,
+    'Charge Controllers': <FaPlug className="text-[var(--primary-neon)]" />,
+    'Solar Kits': <BsSunFill className="text-[var(--primary-neon)]" />,
+    'Mounting Systems': <FaSolarPanel className="text-[var(--primary-neon)]" />,
+    'Solar Lighting': <FaLightbulb className="text-[var(--primary-neon)]" />,
+    'Accessories': <FaPlug className="text-[var(--primary-neon)]" />
+  };
 
-    if (category.includes(e.target.value)) {
-        setCategory(prev=> prev.filter(item => item !== e.target.value))
+  const toggleCategory = (categoryName) => {
+    if (category.includes(categoryName)) {
+      setCategory(prev => prev.filter(item => item !== categoryName));
+    } else {
+      setCategory(prev => [...prev, categoryName]);
     }
-    else{
-      setCategory(prev => [...prev,e.target.value])
-    }
-
-  }
-
-  // const toggleSubCategory = (e) => {
-
-  //   if (subCategory.includes(e.target.value)) {
-  //     setSubCategory(prev=> prev.filter(item => item !== e.target.value))
-  //   }
-  //   else{
-  //     setSubCategory(prev => [...prev,e.target.value])
-  //   }
-  // }
+  };
 
   const applyFilter = () => {
-
     let productsCopy = products.slice();
 
     if (showSearch && search) {
-      productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+      productsCopy = productsCopy.filter(item => 
+        item.name.toLowerCase().includes(search.toLowerCase())
+      );
     }
 
     if (category.length > 0) {
-      productsCopy = productsCopy.filter(item => category.includes(item.category));
+      productsCopy = productsCopy.filter(item => 
+        category.includes(item.category)
+      );
     }
 
-    // if (subCategory.length > 0 ) {
-    //   productsCopy = productsCopy.filter(item => subCategory.includes(item.subCategory))
-    // }
-
-    setFilterProducts(productsCopy)
-
-  }
+    setFilterProducts(productsCopy);
+    setIsLoading(false);
+  };
 
   const sortProduct = () => {
-
-    let fpCopy = filterProducts.slice();
+    let fpCopy = [...filterProducts];
 
     switch (sortType) {
       case 'low-high':
-        setFilterProducts(fpCopy.sort((a,b)=>(a.price - b.price)));
+        setFilterProducts(fpCopy.sort((a, b) => (a.price - b.price)));
         break;
-
       case 'high-low':
-        setFilterProducts(fpCopy.sort((a,b)=>(b.price - a.price)));
+        setFilterProducts(fpCopy.sort((a, b) => (b.price - a.price)));
         break;
-
       default:
         applyFilter();
         break;
     }
+  };
 
-  }
+  // Solar loading animation component
+  const SolarLoader = () => (
+    <div className="flex justify-center items-center py-16 col-span-full">
+      <div className="relative w-20 h-20">
+        {/* Sun core */}
+        <div className="absolute inset-0 rounded-full bg-[var(--primary-neon)] animate-pulse"></div>
+        
+        {/* Sun rays */}
+        {[...Array(8)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute top-1/2 left-1/2 w-2 h-8 bg-[var(--primary-neon)] rounded-full"
+            style={{
+              transform: `rotate(${i * 45}deg) translateY(-30px)`,
+              transformOrigin: '0 0',
+              opacity: 0.7,
+              animation: `pulse 1.5s ease-in-out infinite ${i * 0.1}s`
+            }}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
 
-  useEffect(()=>{
+  useEffect(() => {
+    if (products.length > 0) {
       applyFilter();
-  },[category,search,showSearch,products])
-  // },[category,subCategory,search,showSearch,products])
+    } else {
+      setIsLoading(true);
+    }
+  }, [category, search, showSearch, products]);
 
-  useEffect(()=>{
+  useEffect(() => {
     sortProduct();
-  },[sortType])
+  }, [sortType]);
 
   return (
-    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
-      
-      {/* Filter Options */}
-      <div className='min-w-60'>
-        {/* <p onClick={()=>setShowFilter(!showFilter)} className='prata-regular my-2 text-xl flex items-center cursor-pointer gap-2'>FILTERS
-          <img className={`h-3 sm:hidden ${showFilter ? 'rotate-90' : ''}`} src={assets.dropdown_icon} alt="" />
-        </p> */}
-        {/* Category Filter */}
-        {/* <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' :'hidden'} sm:block`}>
-          <p className='prata-regular mb-3 text-sm font-medium'>CATEGORIES</p>
-          <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Laptop'} onChange={toggleCategory}/> Laptop
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Phone'} onChange={toggleCategory}/> Phone
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Gadget'} onChange={toggleCategory}/> Gadget
-            </p>
+    <div className='py-8 bg-[var(--bg)] transition-colors duration-300'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+        <div className='flex flex-col lg:flex-row gap-6'>
+          {/* Filter Sidebar */}
+          <div className='lg:w-64 bg-[var(--card-bg)] border border-[var(--border)] rounded-xl p-4 h-fit'>
+            <h3 className='text-lg font-bold text-[var(--text)] mb-4 flex items-center gap-2'>
+              <span className='text-[var(--primary-neon)]'>Solar</span> Categories
+            </h3>
+            
+            <div className='space-y-3'>
+              {solarCategories.map((cat) => (
+                <div 
+                  key={cat}
+                  className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer transition-colors ${category.includes(cat) ? 'bg-[var(--primary-neon)/10] border border-[var(--primary-neon)]' : 'hover:bg-[var(--bg)]'}`}
+                  onClick={() => toggleCategory(cat)}
+                >
+                  <div className="text-lg">
+                    {categoryIcons[cat] || <FaPlug className="text-[var(--primary-neon)]" />}
+                  </div>
+                  <span className='text-sm text-[var(--text)]'>{cat}</span>
+                  <input 
+                    type="checkbox" 
+                    checked={category.includes(cat)}
+                    onChange={() => {}}
+                    className="ml-auto h-4 w-4 rounded border-[var(--border)] text-[var(--primary-neon)] focus:ring-[var(--primary-neon)]"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div> */}
-        {/* SubCategory Filter */}
-        {/* <div className={`border border-gray-300 pl-5 py-3 my-5 ${showFilter ? '' :'hidden'} sm:block`}>
-          <p className='mb-3 text-sm font-medium'>TYPE</p>
-          <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory}/> Topwear
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory}/> Bottomwear
-            </p>
-            <p className='flex gap-2'>
-              <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory}/> Winterwear
-            </p>
+
+          {/* Main Content */}
+          <div className='flex-1'>
+            {/* Sort Header */}
+            <div className='flex justify-between items-center mb-6'>
+              <h2 className='text-2xl font-bold text-[var(--text)]'>
+                <span className='text-[var(--primary-neon)]'>Solar</span> Products
+              </h2>
+              
+              <select 
+                onChange={(e) => setSortType(e.target.value)}
+                className='bg-[var(--bg)] border border-[var(--border)] text-[var(--text)] rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-[var(--primary-neon)] focus:border-transparent'
+              >
+                <option value="relavent">Sort by: Relevant</option>
+                <option value="low-high">Sort by: Price Low to High</option>
+                <option value="high-low">Sort by: Price High to Low</option>
+              </select>
+            </div>
+
+            {/* Product Grid */}
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+              {isLoading ? (
+                <SolarLoader />
+              ) : filterProducts.length > 0 ? (
+                filterProducts.map((item) => (
+                  <ProductItem 
+                    key={item._id} 
+                    name={item.name} 
+                    id={item._id} 
+                    price={item.price} 
+                    image={item.image} 
+                  />
+                ))
+              ) : (
+                <div className='col-span-full text-center py-12 text-[var(--text-muted)]'>
+                  No solar products found matching your filters
+                </div>
+              )}
+            </div>
           </div>
-        </div> */}
-      </div>
-
-      {/* Right Side */}
-      <div className='flex-1'>
-
-        <div className='flex justify-between text-base sm:text-2xl mb-4'>
-            {/* <Title text1={'ALL'} text2={'COLLECTIONS'} /> */}
-            {/* Porduct Sort */}
-            <select onChange={(e)=>setSortType(e.target.value)} className='border-2 border-gray-300 text-sm px-2 text-black'>
-              <option value="relavent">Sort by: Relavent</option>
-              <option value="low-high">Sort by: Low to High</option>
-              <option value="high-low">Sort by: High to Low</option>
-            </select>
-        </div>
-
-        {/* Map Products */}
-        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6'>
-          {
-            filterProducts.map((item,index)=>(
-              <ProductItem key={index} name={item.name} id={item._id} price={item.price} image={item.image} />
-            ))
-          }
         </div>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Collection
+export default Collection;
