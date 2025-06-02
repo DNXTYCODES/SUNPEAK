@@ -26,9 +26,9 @@ const Home = () => {
 
       <HeroSection />
       {/* <ServicesHighlight /> */}
-      <Testimonials/>
       <LatestCollection/>
       <BestSeller/>
+      <Testimonials/>
       <SolarPackages />
       {/* <DeliveryPickup/> */}
       <Chatbot/>
