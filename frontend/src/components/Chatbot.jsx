@@ -49,12 +49,12 @@ const Chatbot = () => (
           </div>
 
           <iframe
-            src="https://udify.app/chat/tTA5Fgui9bw01oX3"
+            src="https://udify.app/chatbot/07wzVqW1YiAkZ8BZ"
             className="w-full h-[500px] md:h-[600px] bg-[var(--bg)]"
             frameBorder="0"
             allow="microphone"
             loading="lazy"
-            title="Solar Energy Assistant Chat Interface"
+            title="Talk to our AI-powered chatbot"
           />
         </div>
       </div>
