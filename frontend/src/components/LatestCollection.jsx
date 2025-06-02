@@ -19,6 +19,7 @@ const LatestCollection = () => {
   // Solar loading animation component
   const SolarLoader = () => (
     <div className="flex justify-center items-center py-16">
+      Loading Products... Please wait
       <div className="relative w-20 h-20">
         {/* Sun core */}
         <div className="absolute inset-0 rounded-full bg-[var(--primary-neon)] animate-pulse"></div>
