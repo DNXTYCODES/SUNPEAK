@@ -5,7 +5,7 @@ import { assets } from '../assets/assets';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   const menuItems = [
     { name: 'Home', path: '/' },
