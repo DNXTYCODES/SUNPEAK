@@ -5,7 +5,7 @@ import { assets } from '../assets/assets';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light'); // Default to light theme
 
   const menuItems = [
     { name: 'Home', path: '/' },
@@ -26,10 +26,13 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme); // Set body theme on mount and whenever theme changes
+  }, [theme]);
+
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
-    document.body.setAttribute('data-theme', newTheme);
   };
 
   return (
@@ -37,7 +40,6 @@ const Navbar = () => {
       <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md bg-[var(--bg)/70]' : 'backdrop-blur-none'} border-b border-[var(--border)]`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 relative">
-            {/* Logo */}
             <Link 
               to="/" 
               className="flex items-center gap-2 group animate-fadeIn z-50"
@@ -52,7 +54,6 @@ const Navbar = () => {
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
               <ul className="flex items-center gap-6">
                 {menuItems.map((item, index) => (
@@ -85,7 +86,6 @@ const Navbar = () => {
               </div>
             </div>
 
-            {/* Mobile Controls */}
             <div className="lg:hidden flex items-center gap-4">
               <button 
                 onClick={toggleTheme}
@@ -106,7 +106,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <div className={`lg:hidden fixed inset-0 z-40 transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="absolute inset-0 bg-[var(--bg)/95] backdrop-blur-2xl pt-20">
           <div className="flex flex-col h-full p-6">
@@ -157,14 +156,12 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Spacer to prevent content from being hidden behind navbar */}
       <div className="h-20 w-full"></div>
     </>
   );
 };
 
 export default Navbar;
-
 
 
 
