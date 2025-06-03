@@ -8,21 +8,21 @@ const Testimonials = () => {
       role: 'Homeowner, Lagos',
       text: 'SunPeak transformed our power situation completely. From 2 hours of electricity daily to 24/7 solar power - life changing!',
       image: assets.solar7,
-      location: 'Victoria Island, Lagos'
+      location: 'Uselu'
     },
     {
       name: 'Ngozi Chukwu',
       role: 'Restaurant Owner',
       text: 'Our diesel costs dropped 80% after solar installation. Best investment for our Abuja restaurant!',
       image: assets.solar8,
-      location: 'Garki, Abuja'
+      location: 'Ugbowo'
     },
     {
       name: 'Emeka Industries',
       role: 'Manufacturing Company',
       text: '1MW solar plant installed with zero downtime. Professional team that understood industrial needs.',
       image: assets.solar2 ,
-      location: 'Onne, Rivers State'
+      location: 'Sapele Road'
     }
   ];
 
