@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { assets } from '../assets/assets';
 
 const TrainingPreview = () => {
   const upcomingClasses = [
@@ -13,12 +14,12 @@ const TrainingPreview = () => {
       title: 'Solar Installation Certification',
       description: '6-week hands-on training with NERC accreditation',
       duration: '42 hours',
-      image: '/training/installation-practical.jpg',
+      image: assets.trainingimg1,
       videoId: 'youtube_video_id_1',
       gallery: [
-        '/training/gallery/install-1.jpg',
-        '/training/gallery/install-2.jpg',
-        '/training/gallery/install-3.jpg'
+        assets.trainingimg1,
+        assets.trainingimg2,
+        assets.trainingimg3,
       ],
       icon: (
         <svg className="w-8 h-8 text-[var(--primary-neon)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -30,12 +31,12 @@ const TrainingPreview = () => {
       title: 'Solar Maintenance Technician',
       description: 'Advanced troubleshooting and system maintenance',
       duration: '3 weeks',
-      image: '/training/maintenance-workshop.jpg',
+      image: assets.trainingimg2,
       videoId: 'youtube_video_id_2',
       gallery: [
-        '/training/gallery/maintain-1.jpg',
-        '/training/gallery/maintain-2.jpg',
-        '/training/gallery/maintain-3.jpg'
+        assets.trainingimg4,
+        assets.trainingimg5,
+        assets.trainingimg6,
       ],
       icon: (
         <svg className="w-8 h-8 text-[var(--primary-neon)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,9 +52,7 @@ const TrainingPreview = () => {
       image: '/training/sales-training.jpg',
       videoId: 'youtube_video_id_3',
       gallery: [
-        '/training/gallery/sales-1.jpg',
-        '/training/gallery/sales-2.jpg',
-        '/training/gallery/sales-3.jpg'
+        assets.trainingimg7,
       ],
       icon: (
         <svg className="w-8 h-8 text-[var(--primary-neon)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,7 +102,7 @@ const TrainingPreview = () => {
         </div>
 
         {/* Training Gallery Section */}
-        {/* <div className="mb-16">
+        <div className="mb-16">
           <h3 className="text-2xl font-bold text-[var(--text)] mb-8">Past Class Highlights</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {courses.flatMap(course => course.gallery).map((img, index) => (
@@ -118,7 +117,7 @@ const TrainingPreview = () => {
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
 
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {courses.map((course, index) => (

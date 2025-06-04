@@ -1,40 +1,40 @@
-import React from 'react';
-import { assets } from '../assets/assets';
+import React from "react";
+import { assets } from "../assets/assets";
 
 const Testimonials = () => {
   const testimonials = [
     {
-      name: 'Adebayo Okon',
-      role: 'Homeowner, Lagos',
-      text: 'SunPeak transformed our power situation completely. From 2 hours of electricity daily to 24/7 solar power - life changing!',
+      name: "Adebayo Okon",
+      role: "Homeowner",
+      text: "SunPeak transformed our power situation completely. From 2 hours of electricity daily to 24/7 solar power - life changing!",
       image: assets.solar7,
-      location: 'Uselu'
+      location: "Uselu",
     },
     {
-      name: 'Ngozi Chukwu',
-      role: 'Restaurant Owner',
-      text: 'Our diesel costs dropped 80% after solar installation. Best investment for our Abuja restaurant!',
+      name: "Ngozi Chukwu",
+      role: "Restaurant Owner",
+      text: "Our diesel costs dropped 80% after solar installation. Best investment for our Abuja restaurant!",
       image: assets.solar8,
-      location: 'Ugbowo'
+      location: "Ugbowo",
     },
     {
-      name: 'Emeka Industries',
-      role: 'Manufacturing Company',
-      text: '1MW solar plant installed with zero downtime. Professional team that understood industrial needs.',
-      image: assets.solar2 ,
-      location: 'Sapele Road'
-    }
+      name: "Emeka Industries",
+      role: "Manufacturing Company",
+      text: "1MW solar plant installed with zero downtime. Professional team that understood industrial needs.",
+      image: assets.solar2,
+      location: "Sapele Road",
+    },
   ];
 
   return (
-    <section 
+    <section
       aria-labelledby="testimonials-heading"
       className="py-16 px-4 sm:px-6 lg:px-8 bg-[var(--bg)]"
       itemScope
       itemType="https://schema.org/Review"
     >
       <div className="max-w-7xl mx-auto">
-        <h2 
+        <h2
           id="testimonials-heading"
           className="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--text)] animate-fadeIn"
         >
@@ -43,7 +43,7 @@ const Testimonials = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <article 
+            <article
               key={index}
               className="p-8 rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] backdrop-blur-sm animate-fadeIn"
               style={{ animationDelay: `${index * 0.1}s` }}
@@ -52,10 +52,10 @@ const Testimonials = () => {
               itemType="https://schema.org/Review"
             >
               <div className="flex flex-col items-center text-center mb-6">
-                <img 
-                  // src={`/clients/${testimonial.image}`} 
-                  src={`${testimonial.image}`} 
-                  alt={testimonial.name} 
+                <img
+                  // src={`/clients/${testimonial.image}`}
+                  src={`${testimonial.image}`}
+                  alt={testimonial.name}
                   className="w-20 h-20 rounded-full mb-4 object-cover border-2 border-[var(--primary-neon)]"
                   loading="lazy"
                   width="80"
@@ -72,21 +72,37 @@ const Testimonials = () => {
                 </span>
               </div>
 
-              <blockquote className="text-lg text-[var(--text)] mb-6" itemProp="reviewBody">
+              <blockquote
+                className="text-lg text-[var(--text)] mb-6"
+                itemProp="reviewBody"
+              >
                 "{testimonial.text}"
               </blockquote>
 
-              <div className="text-center" itemScope itemType="https://schema.org/Person" itemProp="author">
+              <div
+                className="text-center"
+                itemScope
+                itemType="https://schema.org/Person"
+                itemProp="author"
+              >
                 <h3 className="font-bold text-[var(--text)]" itemProp="name">
                   {testimonial.name}
                 </h3>
-                <p className="text-sm text-[var(--text-muted)]" itemProp="jobTitle">
+                <p
+                  className="text-sm text-[var(--text-muted)]"
+                  itemProp="jobTitle"
+                >
                   {testimonial.role}
                 </p>
               </div>
 
               <meta itemProp="datePublished" content="2023-08-20" />
-              <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating" className="hidden">
+              <div
+                itemProp="reviewRating"
+                itemScope
+                itemType="https://schema.org/Rating"
+                className="hidden"
+              >
                 <meta itemProp="ratingValue" content="5" />
                 <meta itemProp="bestRating" content="5" />
               </div>
@@ -97,16 +113,25 @@ const Testimonials = () => {
         {/* Video Testimonial Section */}
         <div className="mt-16 max-w-4xl mx-auto animate-fadeIn">
           <div className="aspect-video bg-[var(--card-bg)] rounded-2xl overflow-hidden border border-[var(--border)]">
-            <video 
+            {/* <video 
               controls 
               className="w-full h-full object-cover"
               poster="/video-thumbnail.jpg"
               aria-label="Customer testimonial video from Ugbowo"
             >
-              {/* <source src="/testimonial-kano.mp4" type="video/mp4" /> */}
               <source src={assets.solarvid2} type="video/mp4" />
               Your browser does not support the video tag.
-            </video>
+            </video> */}
+            <div className="relative w-full pb-[56.25%] h-0">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+                title="Customer testimonial video from Ugbowo"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
           {/* <p className="mt-4 text-center text-[var(--text-muted)]">
             Mr David - Ugbowo
@@ -124,28 +149,6 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React from 'react';
 // import { FaQuoteLeft, FaStar } from 'react-icons/fa';
@@ -197,15 +200,15 @@ export default Testimonials;
 //               <div className="mb-4">
 //                 <StarRating rating={testimonial.rating} />
 //               </div>
-              
+
 //               <FaQuoteLeft className="text-3xl text-blue-600 mb-4" />
-              
+
 //               <p className="text-gray-600 mb-6">{testimonial.text}</p>
-              
+
 //               <div className="flex items-center gap-4">
-//                 <img 
-//                   src={testimonial.image} 
-//                   alt={testimonial.name} 
+//                 <img
+//                   src={testimonial.image}
+//                   alt={testimonial.name}
 //                   className="w-12 h-12 rounded-full object-cover"
 //                 />
 //                 <div>
@@ -219,7 +222,7 @@ export default Testimonials;
 
 //         <div className="flex justify-center gap-2 mt-12">
 //           {testimonials.map((_, index) => (
-//             <button 
+//             <button
 //               key={index}
 //               className="w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-colors"
 //               aria-label={`Testimonial ${index + 1}`}

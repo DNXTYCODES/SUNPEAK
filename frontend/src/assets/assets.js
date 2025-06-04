@@ -1,3 +1,14 @@
+
+import trainingvid3 from './trainingvid3.mp4'
+import trainingvid2 from './trainingvid2.mp4'
+import trainingvid1 from './trainingvid1.mp4'
+import trainingimg7 from './trainingimg7.jpg'
+import trainingimg6 from './trainingimg6.jpg'
+import trainingimg5 from './trainingimg5.jpg'
+import trainingimg4 from './trainingimg4.jpg'
+import trainingimg3 from './trainingimg3.jpg'
+import trainingimg2 from './trainingimg2.jpg'
+import trainingimg1 from './trainingimg1.jpg'
 import thumbnail from './thumbnail.png'
 import solarvid3 from './solarvid3.mp4'
 import solarvid2 from './solarvid2.mp4'
@@ -35,6 +46,16 @@ import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 
 export const assets = {
+    trainingvid3,
+    trainingvid2,
+    trainingvid1,
+    trainingimg7,
+    trainingimg6,
+    trainingimg5,
+    trainingimg4,
+    trainingimg3,
+    trainingimg2,
+    trainingimg1,
     thumbnail,
     solarvid3,
     solarvid2,

@@ -18,7 +18,7 @@ const Footer = () => {
               Powering Nigeria's future with sustainable solar energy solutions since 2015.
             </p>
             <div className="flex gap-4 mt-4">
-              <a href="https://wa.me/2348060771104" className="text-[var(--text-muted)] hover:text-[var(--primary-neon)]">
+              <a href="https://wa.me/2348134553751" className="text-[var(--text-muted)] hover:text-[var(--primary-neon)]">
                 <FaWhatsapp size={24} />
               </a>
               <a href="https://instagram.com/sunpeak.ng" className="text-[var(--text-muted)] hover:text-[var(--primary-neon)]">

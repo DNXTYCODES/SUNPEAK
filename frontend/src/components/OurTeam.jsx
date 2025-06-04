@@ -16,33 +16,33 @@ const OurTeam = () => {
       photo: assets.solar6,
       linkedin: '#'
     },
-    {
-      id: 2,
-      name: 'Chidi Nwankwo',
-      role: 'Chief Engineer',
-      bio: `Licensed solar engineer with expertise in large-scale installations. Oversees quality control for all projects. Certified in NECO and IEEE standards.`,
-      expertise: ['System Design', 'Quality Assurance', 'Technical Training'],
-      photo: 'team-engineer.jpg',
-      linkedin: '#'
-    },
-    {
-      id: 3,
-      name: 'Zainab Adekunle',
-      role: 'Training Director',
-      bio: `Solar education specialist developing our certification programs. 8+ years experience in vocational technical training across West Africa.`,
-      expertise: ['Curriculum Design', 'Certification Programs', 'Skill Development'],
-      photo: 'team-training.jpg',
-      linkedin: '#'
-    },
-    {
-      id: 4,
-      name: 'Emeka Okoro',
-      role: 'Field Operations',
-      bio: `Leads installation teams across Nigeria. Certified in solar safety standards and project management. 200+ successful installations completed.`,
-      expertise: ['Team Management', 'Safety Protocols', 'Logistics'],
-      photo: 'team-field.jpg',
-      linkedin: '#'
-    }
+    // {
+    //   id: 2,
+    //   name: 'Chidi Nwankwo',
+    //   role: 'Chief Engineer',
+    //   bio: `Licensed solar engineer with expertise in large-scale installations. Oversees quality control for all projects. Certified in NECO and IEEE standards.`,
+    //   expertise: ['System Design', 'Quality Assurance', 'Technical Training'],
+    //   photo: 'team-engineer.jpg',
+    //   linkedin: '#'
+    // },
+    // {
+    //   id: 3,
+    //   name: 'Zainab Adekunle',
+    //   role: 'Training Director',
+    //   bio: `Solar education specialist developing our certification programs. 8+ years experience in vocational technical training across West Africa.`,
+    //   expertise: ['Curriculum Design', 'Certification Programs', 'Skill Development'],
+    //   photo: 'team-training.jpg',
+    //   linkedin: '#'
+    // },
+    // {
+    //   id: 4,
+    //   name: 'Emeka Okoro',
+    //   role: 'Field Operations',
+    //   bio: `Leads installation teams across Nigeria. Certified in solar safety standards and project management. 200+ successful installations completed.`,
+    //   expertise: ['Team Management', 'Safety Protocols', 'Logistics'],
+    //   photo: 'team-field.jpg',
+    //   linkedin: '#'
+    // }
   ];
 
   return (
