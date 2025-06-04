@@ -92,7 +92,7 @@ const TrainingPreview = () => {
                   <p className="text-[var(--text-muted)]">{cls.type} - {cls.location}</p>
                 </div>
                 <button className="px-4 py-2 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)] hover:text-[var(--bg)] transition-colors duration-300">
-                  <a  href="https://wa.me/2348060771104">
+                  <a  href="https://wa.me/2348134553751">
                   Inquiry
                   </a>
                 </button>

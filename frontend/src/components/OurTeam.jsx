@@ -126,12 +126,12 @@ const OurTeam = () => {
               </div>
             ))}
           </div>
-          <Link
-            to="/careers"
+          <a
+            href="https://wa.me/2348134553751"
             className="inline-block px-8 py-3 bg-[var(--primary-neon)] text-[var(--bg)] rounded-lg hover:shadow-glow transition-all font-medium"
           >
-            View Open Positions
-          </Link>
+            Open Positions
+          </a>
         </div>
       </div>
     </section>

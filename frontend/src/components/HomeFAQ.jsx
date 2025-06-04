@@ -100,7 +100,7 @@ const HomeFAQ = () => {
           </p>
           <div className="flex justify-center gap-6">
             <a
-              href="https://wa.me/2348060771104"
+              href="https://wa.me/2348134553751"
               className="px-6 py-3 bg-[var(--primary-neon)] text-[var(--bg)] rounded-lg flex items-center gap-2 hover:shadow-glow"
             >
               <FaWhatsapp /> WhatsApp Now
@@ -109,7 +109,7 @@ const HomeFAQ = () => {
               href="tel:+2348060771104"
               className="px-6 py-3 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg flex items-center gap-2 hover:bg-[var(--primary-neon)/10]"
             >
-              <FaPhoneAlt /> Call +234 806 077 1104
+              <FaPhoneAlt /> Call +234 813 455 3751
             </a>
           </div>
         </div>

@@ -61,7 +61,7 @@ const ReferralTeaser = () => {
 
         <a
           // to="/referral-program"
-           href="https://wa.me/2348060771104"
+           href="https://wa.me/2348134553751"
           className="inline-block px-8 py-4 bg-[var(--primary-neon)] text-[var(--bg)] rounded-xl font-bold text-lg hover:shadow-[0_0_25px_-5px_var(--primary-neon)] hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-[var(--primary-neon)]"
           aria-label="Join the SunPeak Referral Program"
           itemProp="url"
