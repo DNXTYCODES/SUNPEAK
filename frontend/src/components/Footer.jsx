@@ -60,8 +60,8 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-[var(--text)]">Contact</h3>
             <ul className="space-y-2 text-[var(--text-muted)]">
               <li>
-                <a href="tel:+2348060771104" className="hover:text-[var(--primary-neon)]">
-                  +234 806 077 1104
+                <a href="tel:+2348134553751" className="hover:text-[var(--primary-neon)]">
+                  +234 813 455 3751
                 </a>
               </li>
               <li>
