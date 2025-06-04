@@ -208,7 +208,7 @@ const SolarCalculator = () => {
         {contactVisible && (
           <div className="mt-4 space-y-2 text-[var(--text)]">
             <p className="flex items-center justify-center gap-2">
-              <FaWhatsapp /> +234 806 077 1104
+              <FaWhatsapp /> +234 813 455 3751
             </p>
             <p className="flex items-center justify-center gap-2">
               <FaEnvelope /> info@sunpeak.ng

@@ -137,7 +137,7 @@ const About = () => {
         </div> */}
 
         {/* Certifications */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h2 className="text-3xl font-bold text-[var(--text)] mb-8 text-center">Accreditations</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {certifications.map((cert, index) => (
@@ -154,10 +154,10 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Partnerships */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <h2 className="text-3xl font-bold text-[var(--text)] mb-8 text-center">Trusted Partners</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {partners.map((partner, index) => (
@@ -174,7 +174,7 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* CTA */}
         <div className="text-center border-t border-[var(--border)] pt-12">
@@ -184,7 +184,10 @@ const About = () => {
             we have solutions tailored for your energy needs.
           </p>
           <button className="px-8 py-4 bg-[var(--primary-neon)] text-[var(--bg)] rounded-xl font-bold hover:shadow-glow transition-all">
+            <a  href="tel:+2348134553751">
             Start Your Solar Journey
+
+            </a>
           </button>
         </div>
       </div>

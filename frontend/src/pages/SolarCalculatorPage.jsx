@@ -242,11 +242,11 @@ const SolarCalculatorPage = () => {
             <div className="mt-6 space-y-4 text-center animate-fadeIn">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <a 
-                  href="https://wa.me/2348060771104" 
+                  href="https://wa.me/2348134553751" 
                   className="p-4 border border-[var(--primary-neon)] rounded-xl flex items-center justify-center gap-3 hover:bg-[var(--primary-neon)/10] transition-colors"
                 >
                   <FaWhatsapp className="text-2xl text-[var(--primary-neon)]" />
-                  <span className="text-[var(--text)]">+234 806 077 1104</span>
+                  <span className="text-[var(--text)]">+234 813 455 3751</span>
                 </a>
                 <a 
                   href="mailto:info@sunpeak.ng" 

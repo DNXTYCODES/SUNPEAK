@@ -215,7 +215,7 @@ const TrainingPrograms = () => {
           
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
             <a
-              href="https://wa.me/2348118532900"
+              href="https://wa.me/2348134553751"
               className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] hover:border-[var(--primary-neon)] transition-colors group"
             >
               <div className="flex flex-col items-center gap-3">
@@ -236,7 +236,7 @@ const TrainingPrograms = () => {
                   <FaPhoneAlt className="text-3xl text-[var(--primary-neon)] group-hover:text-[var(--bg)]" />
                 </div>
                 <span className="text-[var(--text)] font-semibold">Direct Call</span>
-                <span className="text-sm text-[var(--text-muted)]">+234 811 853 2900</span>
+                <span className="text-sm text-[var(--text-muted)]">+234 813 455 3751</span>
               </div>
             </a>
 

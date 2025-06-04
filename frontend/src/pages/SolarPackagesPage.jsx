@@ -132,7 +132,7 @@ const SolarPackagesPage = () => {
               </ul>
 
               <a
-                href="https://wa.me/2348118532900"
+                href="https://wa.me/2348134553751"
                 className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[var(--primary-neon)] text-[var(--bg)] rounded-lg font-bold hover:shadow-glow"
               >
                 <FaWhatsapp /> Get Package Details

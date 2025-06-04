@@ -27,8 +27,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold">Headquarters</h3>
                       <p itemProp="address" className="text-[var(--text-muted)]">
-                        12 Solar Way, Victoria Island<br/>
-                        Lagos, Nigeria
+                        27 first east circular road opposite salvation army before esigie junction<br/>
+                        Benin, Edo
                       </p>
                     </div>
                   </div>
@@ -38,8 +38,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold">Solar Support</h3>
                       <p className="text-[var(--text-muted)]">
-                        Tel: <a href="tel:+2348118532900" itemProp="telephone" className="hover:text-[var(--primary-neon)]">+234 811 853 2900</a><br/>
-                        WhatsApp: <a href="https://wa.me/2348118532900" className="hover:text-[var(--primary-neon)]">+234 811 853 2900</a>
+                        Tel: <a href="tel:+" itemProp="telephone" className="hover:text-[var(--primary-neon)]">+234 813 455 3751</a><br/>
+                        WhatsApp: <a href="https://wa.me/2348134553751" className="hover:text-[var(--primary-neon)]">+234 813 455 3751</a>
                       </p>
                     </div>
                   </div>
