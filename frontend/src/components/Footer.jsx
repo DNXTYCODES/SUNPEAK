@@ -48,10 +48,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-[var(--text)]">Support</h3>
             <ul className="space-y-2 text-[var(--text-muted)]">
-              <li><a href="/faq" className="hover:text-[var(--primary-neon)]">FAQs</a></li>
-              <li><a href="/support" className="hover:text-[var(--primary-neon)]">Installation Support</a></li>
-              <li><a href="/warranty" className="hover:text-[var(--primary-neon)]">Warranty</a></li>
-              <li><a href="/privacy" className="hover:text-[var(--primary-neon)]">Privacy Policy</a></li>
+              <li><a href="/solarcalculator" className="hover:text-[var(--primary-neon)]">Solar Calculator</a></li>
+              <li><a href="/solarcalculator" className="hover:text-[var(--primary-neon)]">Support</a></li>
+              <li><a href="/collection" className="hover:text-[var(--primary-neon)]">Products</a></li>
+              {/* <li><a href="/privacy" className="hover:text-[var(--primary-neon)]">Privacy Policy</a></li> */}
             </ul>
           </div>
 
