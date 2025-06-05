@@ -89,7 +89,7 @@ const OurTeam = () => {
               <p className="text-[var(--primary-neon)] mt-1" itemProp="jobTitle">{member.role}</p>
               <p className="text-[var(--text-muted)] mt-4 line-clamp-3" itemProp="description">{member.bio}</p>
               
-              <div className="mt-6 flex gap-4">
+              {/* <div className="mt-6 flex gap-4">
                 <a 
                   href={member.linkedin} 
                   className="text-[var(--text-muted)] hover:text-[var(--primary-neon)]"
@@ -97,7 +97,7 @@ const OurTeam = () => {
                 >
                   <FaLinkedin className="w-6 h-6" />
                 </a>
-              </div>
+              </div> */}
             </article>
           ))}
         </div>
