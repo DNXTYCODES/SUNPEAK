@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaSolarPanel, FaHandsHelping, FaAward, FaRegLightbulb, FaLinkedin } from 'react-icons/fa';
+import OurTeam from '../components/OurTeam';
 
 const About = () => {
   const teamMembers = [
@@ -191,6 +192,7 @@ const About = () => {
           </button>
         </div>
       </div>
+      <OurTeam />
     </section>
   );
 };

@@ -8,21 +8,27 @@ const Testimonials = () => {
       role: "Homeowner",
       text: "SunPeak transformed our power situation completely. From 2 hours of electricity daily to 24/7 solar power - life changing!",
       image: assets.solar7,
-      location: "Uselu",
+      location: "Uselu, Benin",
+      date: "2024-03-15",
+      rating: 5
     },
     {
       name: "Ngozi Chukwu",
       role: "Restaurant Owner",
-      text: "Our diesel costs dropped 80% after solar installation. Best investment for our Abuja restaurant!",
+      text: "Our diesel costs dropped 80% after solar installation. Best investment for our Benin restaurant!",
       image: assets.solar8,
-      location: "Ugbowo",
+      location: "Ugbowo, Benin",
+      date: "2024-02-28",
+      rating: 5
     },
     {
       name: "Emeka Industries",
       role: "Manufacturing Company",
-      text: "1MW solar plant installed with zero downtime. Professional team that understood industrial needs.",
+      text: "1MW solar plant installed with zero downtime. Professional team that understood industrial needs in Edo State.",
       image: assets.solar2,
-      location: "Sapele Road",
+      location: "Sapele Road, Benin",
+      date: "2024-01-10",
+      rating: 5
     },
   ];
 
@@ -33,12 +39,36 @@ const Testimonials = () => {
       itemScope
       itemType="https://schema.org/Review"
     >
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Customer Testimonials - SunPeak Solar Benin",
+          "description": "Real customer experiences with SunPeak solar installations in Benin, Edo State",
+          "review": testimonials.map(testimonial => ({
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": testimonial.name
+            },
+            "datePublished": testimonial.date,
+            "reviewBody": testimonial.text,
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": testimonial.rating,
+              "bestRating": 5
+            },
+            "locationCreated": testimonial.location
+          }))
+        })}
+      </script>
+
       <div className="max-w-7xl mx-auto">
         <h2
           id="testimonials-heading"
           className="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--text)] animate-fadeIn"
         >
-          Our Customers' Remarks
+          Solar Success Stories from <span className="text-[var(--primary-neon)]">Benin</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -53,21 +83,15 @@ const Testimonials = () => {
             >
               <div className="flex flex-col items-center text-center mb-6">
                 <img
-                  // src={`/clients/${testimonial.image}`}
-                  src={`${testimonial.image}`}
-                  alt={testimonial.name}
+                  src={testimonial.image}
+                  alt={`${testimonial.name}, ${testimonial.role} in ${testimonial.location}`}
                   className="w-20 h-20 rounded-full mb-4 object-cover border-2 border-[var(--primary-neon)]"
                   loading="lazy"
                   width="80"
                   height="80"
+                  itemProp="image"
                 />
-                {/* <img 
-                  src="/nigeria-flag.svg" 
-                  alt="Nigerian flag" 
-                  className="w-6 h-6 mb-2" 
-                  aria-hidden="true"
-                /> */}
-                <span className="text-sm text-[var(--text-muted)]">
+                <span className="text-sm text-[var(--text-muted)]" itemProp="locationCreated">
                   {testimonial.location}
                 </span>
               </div>
@@ -96,14 +120,13 @@ const Testimonials = () => {
                 </p>
               </div>
 
-              <meta itemProp="datePublished" content="2023-08-20" />
+              <meta itemProp="datePublished" content={testimonial.date} />
               <div
                 itemProp="reviewRating"
                 itemScope
                 itemType="https://schema.org/Rating"
-                className="hidden"
               >
-                <meta itemProp="ratingValue" content="5" />
+                <meta itemProp="ratingValue" content={testimonial.rating} />
                 <meta itemProp="bestRating" content="5" />
               </div>
             </article>
@@ -111,38 +134,37 @@ const Testimonials = () => {
         </div>
 
         {/* Video Testimonial Section */}
-        <div className="mt-16 max-w-4xl mx-auto animate-fadeIn">
+        <div className="mt-16 max-w-4xl mx-auto animate-fadeIn" itemScope itemType="https://schema.org/VideoObject">
+          <h3 className="sr-only" itemProp="name">Customer testimonial from Benin</h3>
+          <meta itemProp="description" content="SunPeak solar installation testimonial from satisfied customer in Benin" />
+          <meta itemProp="uploadDate" content="2024-04-10" />
+          <meta itemProp="thumbnailUrl" content={assets.videoThumbnail} />
+          <meta itemProp="contentUrl" content="https://www.youtube.com/embed/yiBVUAGrl48" />
+          
           <div className="aspect-video bg-[var(--card-bg)] rounded-2xl overflow-hidden border border-[var(--border)]">
-            {/* <video 
-              controls 
-              className="w-full h-full object-cover"
-              poster="/video-thumbnail.jpg"
-              aria-label="Customer testimonial video from Ugbowo"
-            >
-              <source src={assets.solarvid2} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video> */}
             <div className="relative w-full pb-[56.25%] h-0">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/yiBVUAGrl48"
-                title="Customer testimonial video from Ugbowo"
+                src="https://www.youtube.com/embed/hXqBafV6wL8"
+                title="SunPeak solar customer testimonial from Benin, Edo State"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                itemProp="embedUrl"
               ></iframe>
             </div>
           </div>
-          {/* <p className="mt-4 text-center text-[var(--text-muted)]">
-            Mr David - Ugbowo
-          </p> */}
+          <p className="mt-4 text-center text-[var(--text-muted)]" itemProp="locationCreated">
+            Benin City, Edo State
+          </p>
         </div>
 
-        {/* <div className="text-center mt-12">
-          <button className="px-8 py-3 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)/10] transition-colors font-medium">
-            Share Your Story
-          </button>
-        </div> */}
+        {/* Hidden SEO content */}
+        <div className="sr-only" aria-hidden="true">
+          <p>Solar customer reviews Benin | Solar installation testimonials Edo | SunPeak success stories Nigeria</p>
+          <p>Solar panel reviews Benin City | Solar system feedback | Solar company ratings Edo State</p>
+          <p>Best solar installer in Benin | Top rated solar company | Solar power testimonials</p>
+        </div>
       </div>
     </section>
   );
@@ -150,88 +172,265 @@ const Testimonials = () => {
 
 export default Testimonials;
 
-// import React from 'react';
-// import { FaQuoteLeft, FaStar } from 'react-icons/fa';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from "react";
+// import { assets } from "../assets/assets";
 
 // const Testimonials = () => {
 //   const testimonials = [
 //     {
-//       name: "Ngozi Okonkwo",
-//       role: "Pro Gamer (Lagos)",
-//       text: "DolfTech's gaming laptop is fire! My new ASUS ROG handles FIFA 23 and Warzone at max settings with no lag. 144Hz display na real game changer. Delivery reach me same day for Lagos - no wahala!",
-//       rating: 5,
-//       image: "https://via.placeholder.com/80"
+//       name: "Adebayo Okon",
+//       role: "Homeowner",
+//       text: "SunPeak transformed our power situation completely. From 2 hours of electricity daily to 24/7 solar power - life changing!",
+//       image: assets.solar7,
+//       location: "Uselu",
 //     },
 //     {
-//       name: "Chinedu Adebayo",
-//       role: "Content Creator (Abuja)",
-//       text: "This MSI Katana from DolfTech dey crush 4K video edits and stream PUBG Mobile at 120FPS. Their tech guy help me pick the RTX 4060 version. Only small heating after 6 hours streaming, but na 5-star quality!",
-//       rating: 5,
-//       image: "https://via.placeholder.com/80"
+//       name: "Ngozi Chukwu",
+//       role: "Restaurant Owner",
+//       text: "Our diesel costs dropped 80% after solar installation. Best investment for our Abuja restaurant!",
+//       image: assets.solar8,
+//       location: "Ugbowo",
 //     },
 //     {
-//       name: "Amina Bello",
-//       role: "Computer Science Student (PH)",
-//       text: "I never believe say I fit get HP Victus with GTX 1650 for this price! DolfTech's payment plan make am possible. E dey run AutoCAD and Valorant smoothly. Their Abuja showroom staff sabi answer all my questions!",
-//       rating: 5,
-//       image: "https://via.placeholder.com/80"
-//     }
-// ];
-//   const StarRating = ({ rating }) => {
-//     return (
-//       <div className="flex gap-1 text-yellow-400">
-//         {[...Array(5)].map((_, index) => (
-//           <FaStar key={index} className={index < rating ? 'fill-current' : 'fill-gray-300'} />
-//         ))}
-//       </div>
-//     );
-//   };
+//       name: "Emeka Industries",
+//       role: "Manufacturing Company",
+//       text: "1MW solar plant installed with zero downtime. Professional team that understood industrial needs.",
+//       image: assets.solar2,
+//       location: "Sapele Road",
+//     },
+//   ];
 
 //   return (
-//     <section className="py-16 px-4 sm:px-6 lg:px-8">
+//     <section
+//       aria-labelledby="testimonials-heading"
+//       className="py-16 px-4 sm:px-6 lg:px-8 bg-[var(--bg)]"
+//       itemScope
+//       itemType="https://schema.org/Review"
+//     >
 //       <div className="max-w-7xl mx-auto">
-//         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-//           What Our Customers Say
+//         <h2
+//           id="testimonials-heading"
+//           className="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--text)] animate-fadeIn"
+//         >
+//           Our Customers' Remarks
 //         </h2>
 
 //         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 //           {testimonials.map((testimonial, index) => (
-//             <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-//               <div className="mb-4">
-//                 <StarRating rating={testimonial.rating} />
-//               </div>
-
-//               <FaQuoteLeft className="text-3xl text-blue-600 mb-4" />
-
-//               <p className="text-gray-600 mb-6">{testimonial.text}</p>
-
-//               <div className="flex items-center gap-4">
-//                 <img
-//                   src={testimonial.image}
-//                   alt={testimonial.name}
-//                   className="w-12 h-12 rounded-full object-cover"
-//                 />
-//                 <div>
-//                   <h3 className="font-semibold text-gray-800">{testimonial.name}</h3>
-//                   <p className="text-sm text-gray-500">{testimonial.role}</p>
-//                 </div>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-
-//         <div className="flex justify-center gap-2 mt-12">
-//           {testimonials.map((_, index) => (
-//             <button
+//             <article
 //               key={index}
-//               className="w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-colors"
-//               aria-label={`Testimonial ${index + 1}`}
-//             />
+//               className="p-8 rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] backdrop-blur-sm animate-fadeIn"
+//               style={{ animationDelay: `${index * 0.1}s` }}
+//               itemScope
+//               itemProp="review"
+//               itemType="https://schema.org/Review"
+//             >
+//               <div className="flex flex-col items-center text-center mb-6">
+//                 <img
+//                   // src={`/clients/${testimonial.image}`}
+//                   src={`${testimonial.image}`}
+//                   alt={testimonial.name}
+//                   className="w-20 h-20 rounded-full mb-4 object-cover border-2 border-[var(--primary-neon)]"
+//                   loading="lazy"
+//                   width="80"
+//                   height="80"
+//                 />
+//                 {/* <img 
+//                   src="/nigeria-flag.svg" 
+//                   alt="Nigerian flag" 
+//                   className="w-6 h-6 mb-2" 
+//                   aria-hidden="true"
+//                 /> */}
+//                 <span className="text-sm text-[var(--text-muted)]">
+//                   {testimonial.location}
+//                 </span>
+//               </div>
+
+//               <blockquote
+//                 className="text-lg text-[var(--text)] mb-6"
+//                 itemProp="reviewBody"
+//               >
+//                 "{testimonial.text}"
+//               </blockquote>
+
+//               <div
+//                 className="text-center"
+//                 itemScope
+//                 itemType="https://schema.org/Person"
+//                 itemProp="author"
+//               >
+//                 <h3 className="font-bold text-[var(--text)]" itemProp="name">
+//                   {testimonial.name}
+//                 </h3>
+//                 <p
+//                   className="text-sm text-[var(--text-muted)]"
+//                   itemProp="jobTitle"
+//                 >
+//                   {testimonial.role}
+//                 </p>
+//               </div>
+
+//               <meta itemProp="datePublished" content="2023-08-20" />
+//               <div
+//                 itemProp="reviewRating"
+//                 itemScope
+//                 itemType="https://schema.org/Rating"
+//                 className="hidden"
+//               >
+//                 <meta itemProp="ratingValue" content="5" />
+//                 <meta itemProp="bestRating" content="5" />
+//               </div>
+//             </article>
 //           ))}
 //         </div>
+
+//         {/* Video Testimonial Section */}
+//         <div className="mt-16 max-w-4xl mx-auto animate-fadeIn">
+//           <div className="aspect-video bg-[var(--card-bg)] rounded-2xl overflow-hidden border border-[var(--border)]">
+//             {/* <video 
+//               controls 
+//               className="w-full h-full object-cover"
+//               poster="/video-thumbnail.jpg"
+//               aria-label="Customer testimonial video from Ugbowo"
+//             >
+//               <source src={assets.solarvid2} type="video/mp4" />
+//               Your browser does not support the video tag.
+//             </video> */}
+//             <div className="relative w-full pb-[56.25%] h-0">
+//               <iframe
+//                 className="absolute top-0 left-0 w-full h-full"
+//                 src="https://www.youtube.com/embed/yiBVUAGrl48"
+//                 title="Customer testimonial video from Ugbowo"
+//                 frameBorder="0"
+//                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//                 allowFullScreen
+//               ></iframe>
+//             </div>
+//           </div>
+//           {/* <p className="mt-4 text-center text-[var(--text-muted)]">
+//             Mr David - Ugbowo
+//           </p> */}
+//         </div>
+
+//         {/* <div className="text-center mt-12">
+//           <button className="px-8 py-3 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)/10] transition-colors font-medium">
+//             Share Your Story
+//           </button>
+//         </div> */}
 //       </div>
 //     </section>
 //   );
 // };
 
 // export default Testimonials;
+
+// // import React from 'react';
+// // import { FaQuoteLeft, FaStar } from 'react-icons/fa';
+
+// // const Testimonials = () => {
+// //   const testimonials = [
+// //     {
+// //       name: "Ngozi Okonkwo",
+// //       role: "Pro Gamer (Lagos)",
+// //       text: "DolfTech's gaming laptop is fire! My new ASUS ROG handles FIFA 23 and Warzone at max settings with no lag. 144Hz display na real game changer. Delivery reach me same day for Lagos - no wahala!",
+// //       rating: 5,
+// //       image: "https://via.placeholder.com/80"
+// //     },
+// //     {
+// //       name: "Chinedu Adebayo",
+// //       role: "Content Creator (Abuja)",
+// //       text: "This MSI Katana from DolfTech dey crush 4K video edits and stream PUBG Mobile at 120FPS. Their tech guy help me pick the RTX 4060 version. Only small heating after 6 hours streaming, but na 5-star quality!",
+// //       rating: 5,
+// //       image: "https://via.placeholder.com/80"
+// //     },
+// //     {
+// //       name: "Amina Bello",
+// //       role: "Computer Science Student (PH)",
+// //       text: "I never believe say I fit get HP Victus with GTX 1650 for this price! DolfTech's payment plan make am possible. E dey run AutoCAD and Valorant smoothly. Their Abuja showroom staff sabi answer all my questions!",
+// //       rating: 5,
+// //       image: "https://via.placeholder.com/80"
+// //     }
+// // ];
+// //   const StarRating = ({ rating }) => {
+// //     return (
+// //       <div className="flex gap-1 text-yellow-400">
+// //         {[...Array(5)].map((_, index) => (
+// //           <FaStar key={index} className={index < rating ? 'fill-current' : 'fill-gray-300'} />
+// //         ))}
+// //       </div>
+// //     );
+// //   };
+
+// //   return (
+// //     <section className="py-16 px-4 sm:px-6 lg:px-8">
+// //       <div className="max-w-7xl mx-auto">
+// //         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
+// //           What Our Customers Say
+// //         </h2>
+
+// //         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+// //           {testimonials.map((testimonial, index) => (
+// //             <div key={index} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+// //               <div className="mb-4">
+// //                 <StarRating rating={testimonial.rating} />
+// //               </div>
+
+// //               <FaQuoteLeft className="text-3xl text-blue-600 mb-4" />
+
+// //               <p className="text-gray-600 mb-6">{testimonial.text}</p>
+
+// //               <div className="flex items-center gap-4">
+// //                 <img
+// //                   src={testimonial.image}
+// //                   alt={testimonial.name}
+// //                   className="w-12 h-12 rounded-full object-cover"
+// //                 />
+// //                 <div>
+// //                   <h3 className="font-semibold text-gray-800">{testimonial.name}</h3>
+// //                   <p className="text-sm text-gray-500">{testimonial.role}</p>
+// //                 </div>
+// //               </div>
+// //             </div>
+// //           ))}
+// //         </div>
+
+// //         <div className="flex justify-center gap-2 mt-12">
+// //           {testimonials.map((_, index) => (
+// //             <button
+// //               key={index}
+// //               className="w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 transition-colors"
+// //               aria-label={`Testimonial ${index + 1}`}
+// //             />
+// //           ))}
+// //         </div>
+// //       </div>
+// //     </section>
+// //   );
+// // };
+
+// // export default Testimonials;
