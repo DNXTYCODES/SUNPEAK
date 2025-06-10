@@ -70,7 +70,7 @@ const Product = () => {
             // onClick={() => addToCart(productData._id)}
             className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium"
           >
-            <a href="https://wa.me/2348118532900">
+            <a href="https://wa.me/2348134553751">
             BUY
             </a>
           </button>
