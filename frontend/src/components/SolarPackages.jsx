@@ -77,7 +77,7 @@ const SolarPackages = () => {
       features: [
         '12x 320W Solar Panels',
         '4x 220Ah Batteries',
-        '5kVA Inverter',
+        '5kVA, 48W',
         'MPPT Controller 60A',
         'Advanced Installation',
         '5-Year Warranty'
