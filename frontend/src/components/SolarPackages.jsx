@@ -31,8 +31,8 @@ const SolarPackages = () => {
       capacity: '1.5kVA',
       features: [
         '3x 180W Solar Panels',
-        '2x 100Ah Batteries',
-        '1500W Inverter',
+        '220Ah Batteries',
+        '1000W Inverter',
         'Basic Installation',
         '1-Year Warranty'
       ],
@@ -51,9 +51,10 @@ const SolarPackages = () => {
       price: 2300000,
       capacity: '3.5kVA',
       features: [
+        '3.5kVA, 24V',
         '9x 320W Solar Panels',
         '2x 220Ah Batteries',
-        '3.5kVA Inverter',
+        //#'3.5kVA Inverter',
         'MPPT Controller 60A',
         'Professional Installation',
         '5-Year Warranty'
@@ -164,10 +165,10 @@ const SolarPackages = () => {
                 <div className="text-[var(--primary-neon)] text-4xl font-bold my-4" itemProp="price">
                   ₦{(pkg.price).toLocaleString()}
                 </div>
-                <div className="flex items-center justify-center gap-2 text-[var(--text-muted)]">
-                  <FaBatteryFull />
-                  <span itemProp="description">{pkg.capacity} System for {pkg.coverage}</span>
-                </div>
+               // <div className="flex items-center justify-center gap-2 text-[var(--text-muted)]">
+                 // <FaBatteryFull />
+                 // <span itemProp="description">{pkg.capacity} System for {pkg.coverage}</span>
+               // </div>
               </div>
 
               <ul className="space-y-3 mb-4">
