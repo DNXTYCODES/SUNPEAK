@@ -220,7 +220,7 @@ const SolarPackages = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              to="/solar-packages"
+              to="/solarpackages"
               className="flex items-center gap-2 px-6 py-3 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg font-bold hover:bg-[var(--primary-neon)/10] transition-colors"
               aria-label="View all solar packages in Benin"
             >
