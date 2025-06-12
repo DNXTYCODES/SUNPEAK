@@ -29,8 +29,8 @@ const SolarPackagesPage = () => {
       capacity: '1.5kVA',
       features: [
         '3x 180W Solar Panels',
-        '2x 100Ah Batteries',
-        '1500W Inverter',
+        '220Ah Batteries',
+        '1000W Inverter',
         'Basic Installation',
         '1-Year Warranty'
       ],
@@ -49,8 +49,8 @@ const SolarPackagesPage = () => {
       capacity: '2kVA',
       features: [
         '4x 180W Solar Panels',
-        '2x 150Ah Batteries',
-        '2000W Inverter',
+        '220Ah Batteries',
+        '1KVA Inverter',
         'Standard Installation',
         '2-Year Warranty'
       ],
@@ -71,7 +71,8 @@ const SolarPackagesPage = () => {
       features: [
         '6x 180W Solar Panels',
         '4x 100Ah Batteries',
-        '2500W Inverter',
+        '1.5KVA Inverter, 12V',
+        'MPPT Controller 60A',
         'Professional Installation',
         '3-Year Warranty',
         'Basic Monitoring'
@@ -94,11 +95,12 @@ const SolarPackagesPage = () => {
       price: 1800000,
       capacity: '3kVA',
       features: [
-        '8x 180W Solar Panels',
+        '6x 320W Solar Panels',
         '4x 150Ah Batteries',
-        '3000W Inverter',
+        '2.5KVA Inverter, 24V',
         'Professional Installation',
         '3-Year Warranty',
+        'MPPT Controller 60A',
         'Smart Monitoring'
       ],
       devices: [
@@ -119,7 +121,7 @@ const SolarPackagesPage = () => {
       features: [
         '9x 320W Solar Panels',
         '2x 220Ah Batteries',
-        '3.5kVA Inverter',
+        '3.5kVA Inverter, 24V',
         'MPPT Controller 60A',
         'Professional Installation',
         '5-Year Warranty'
@@ -139,10 +141,10 @@ const SolarPackagesPage = () => {
       price: 1900000,
       capacity: '2.5kVA',
       features: [
-        '6x 200W Solar Panels',
+        '6x 320W Solar Panels',
         '2x 220Ah Batteries',
-        '2.5kVA Inverter',
-        'PWM 60A Controller',
+        '3.5kVA Inverter, 24V',
+        'MPPT Controller 60A',
         'Standard Installation',
         '3-Year Warranty'
       ],
@@ -290,10 +292,10 @@ const SolarPackagesPage = () => {
                 ₦{pkg.price.toLocaleString()}
               </div>
 
-              <div className="flex items-center gap-2 text-[var(--text-muted)] mb-4">
+           {/*   <div className="flex items-center gap-2 text-[var(--text-muted)] mb-4">
                 <FaBatteryFull />
                 <span>{pkg.capacity} System Capacity</span>
-              </div>
+              </div>*/}
 
               <div className="flex items-center gap-2 text-[var(--text-muted)] mb-6">
                 <FaTachometerAlt />
