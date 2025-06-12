@@ -137,7 +137,7 @@ const SolarPackagesPage = () => {
       energyOutput: '15-18kWh daily'
     },
     {
-      name: '2.5KVA Solar System',
+      name: '3.5KVA Solar System',
       price: 1900000,
       capacity: '2.5kVA',
       features: [
@@ -145,6 +145,28 @@ const SolarPackagesPage = () => {
         '2x 220Ah Batteries',
         '3.5kVA Inverter, 24V',
         'MPPT Controller 60A',
+        'Standard Installation',
+        '3-Year Warranty'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (1)',
+        'Washing Machine (1)',
+        'TV (2)',
+        'Fan (3)'
+      ],
+      bestFor: 'Medium homes with essential appliances',
+      energyOutput: '10-12kWh daily'
+    },
+    {
+      name: '2.5KVA Solar System',
+      price: 1550000,
+      capacity: '2.5kVA',
+      features: [
+        '6x 200W Solar Panels',
+        '2x 220Ah Batteries',
+        '2.5kVA Inverter, 24V',
+        'PMW Controller 60A',
         'Standard Installation',
         '3-Year Warranty'
       ],
