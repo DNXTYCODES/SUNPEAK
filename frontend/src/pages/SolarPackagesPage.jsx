@@ -44,7 +44,7 @@ const SolarPackagesPage = () => {
       energyOutput: '4-5kWh daily'
     },
     {
-      name: 'Premium Home Package',
+      name: 'Bronze Home Package',
       price: 900000,
       capacity: '2kVA',
       features: [
@@ -65,7 +65,7 @@ const SolarPackagesPage = () => {
       energyOutput: '6-7kWh daily'
     },
     {
-      name: 'Deluxe Home System',
+      name: 'Silver Home System',
       price: 1200000,
       capacity: '2.5kVA',
       features: [
@@ -91,7 +91,7 @@ const SolarPackagesPage = () => {
       popular: true
     },
     {
-      name: '2.5KVA Solar System',
+      name: 'Gold Home System',
       price: 1550000,
       capacity: '2.5kVA',
       features: [
@@ -113,7 +113,7 @@ const SolarPackagesPage = () => {
       energyOutput: '10-12kWh daily'
     },
     {
-      name: 'Ultimate Home Solution',
+      name: 'Platinum Home Solution',
       price: 1800000,
       capacity: '3kVA',
       features: [
@@ -137,7 +137,7 @@ const SolarPackagesPage = () => {
       energyOutput: '12-15kWh daily'
     },
     {
-      name: '3.5KVA Solar System',
+      name: 'Premium Home System',
       price: 1900000,
       capacity: '2.5kVA',
       features: [
@@ -159,7 +159,7 @@ const SolarPackagesPage = () => {
       energyOutput: '10-12kWh daily'
     },
     {
-      name: '3.5KVA Solar System',
+      name: 'Premium Plus System',
       price: 2300000,
       capacity: '3.5kVA',
       features: [
@@ -181,7 +181,7 @@ const SolarPackagesPage = () => {
       energyOutput: '15-18kWh daily'
     },
     {
-      name: '5kW Lithium System',
+      name: 'PowerMax Lithium System',
       price: 3100000,
       capacity: '10.5kW',
       features: [
@@ -204,7 +204,7 @@ const SolarPackagesPage = () => {
       energyOutput: '20-25kWh daily'
     },
     {
-      name: '5kVA Solar System',
+      name: 'ProEnergy Solar System',
       price: 3900000,
       capacity: '5kVA',
       features: [
@@ -226,7 +226,7 @@ const SolarPackagesPage = () => {
       energyOutput: '25-30kWh daily'
     },
     {
-      name: '10kW Lithium System',
+      name: 'UltraGrid Lithium System',
       price: 5400000,
       capacity: '10kW',
       features: [
@@ -251,7 +251,7 @@ const SolarPackagesPage = () => {
       popular: true
     },
     {
-      name: '15kW Lithium System',
+      name: 'MegaPower Lithium System',
       price: 7000000,
       capacity: '15kW',
       features: [
@@ -277,7 +277,7 @@ const SolarPackagesPage = () => {
       energyOutput: '50-60kWh daily'
     },
     {
-      name: '15kW Lithium System',
+      name: 'UltraPower plus Lithium System',
       price: 7800000,
       capacity: '17.5kW',
       features: [
