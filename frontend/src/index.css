@@ -23,6 +23,10 @@
   --text-muted: #666666;
 }
 
+.py-12 {
+  background: var(--card-bg);
+}
+
 /* Improved gradient transitions */
 .bg-gradient-to-br {
   transition: background 0.3s ease;

@@ -56,6 +56,7 @@ const Home = () => {
         <div className="container mx-auto">
           <ReferralTeaser />
           <TrainingPreview />
+          <ServicesHighlight />
         </div>
       </section>
       

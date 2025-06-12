@@ -6,6 +6,7 @@ import {
   FaHome,
   FaBuilding,
   FaClipboardCheck,
+  FaVideo,
 } from "react-icons/fa";
 
 const Services = () => {
@@ -52,6 +53,14 @@ const Services = () => {
             <FaSolarPanel className="text-[var(--primary-neon)] text-4xl" />
             <h2 className="text-3xl font-bold text-[var(--text)]">
               Solar Installation
+            </h2>
+          </div>
+
+          
+          <div className="flex items-center gap-4 mb-8">
+            <FaVideo className="text-[var(--primary-neon)] text-4xl" />
+            <h2 className="text-3xl font-bold text-[var(--text)]">
+              CCTV/Camera Installation
             </h2>
           </div>
 

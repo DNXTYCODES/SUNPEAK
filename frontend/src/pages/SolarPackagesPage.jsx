@@ -1,80 +1,256 @@
 import React from 'react';
-import { FaWhatsapp, FaBatteryFull, FaTachometerAlt, FaRegStar, FaSolarPanel, FaMoneyBillWave, FaPhoneAlt } from 'react-icons/fa';
+import { FaWhatsapp, FaBatteryFull, FaTachometerAlt, FaRegStar, FaSolarPanel, FaMoneyBillWave, FaPhoneAlt, FaPlug } from 'react-icons/fa';
 
 const SolarPackagesPage = () => {
   const packages = [
     {
-      name: 'Basic Home',
-      price: 650000,
-      capacity: '2.5kVA',
+      name: 'Mini Solar Package',
+      price: 450000,
+      capacity: '1kVA',
       features: [
-        '3x 400W Solar Panels',
-        '2.4kWh Lithium Battery',
-        '2.5kVA Inverter',
+        '2x 180W Solar Panels',
+        '1x 100Ah Battery',
+        '1000W Inverter',
         'Basic Installation',
         '1-Year Warranty'
       ],
-      bestFor: 'Small apartments/1-2 rooms'
+      devices: [
+        'TV (1)',
+        'Fan (2)',
+        'Bulb (6)',
+        'Decoder (1)'
+      ],
+      bestFor: 'Small apartment or 1-2 room home',
+      energyOutput: '2-3kWh daily'
     },
     {
-      name: 'Family Starter',
-      price: 1200000,
-      capacity: '4kVA',
+      name: 'Essential Home Package',
+      price: 760000,
+      capacity: '1.5kVA',
       features: [
-        '6x 400W Solar Panels',
-        '4.8kWh Lithium Battery',
-        '4kVA Hybrid Inverter',
+        '3x 180W Solar Panels',
+        '2x 100Ah Batteries',
+        '1500W Inverter',
+        'Basic Installation',
+        '1-Year Warranty'
+      ],
+      devices: [
+        'TV (1)',
+        'Fan (3)',
+        'Bulb (8)',
+        'Decoder (1)'
+      ],
+      bestFor: '2-3 bedroom homes',
+      energyOutput: '4-5kWh daily'
+    },
+    {
+      name: 'Premium Home Package',
+      price: 900000,
+      capacity: '2kVA',
+      features: [
+        '4x 180W Solar Panels',
+        '2x 150Ah Batteries',
+        '2000W Inverter',
         'Standard Installation',
-        '2-Year Warranty',
-        'Basic Monitoring'
+        '2-Year Warranty'
+      ],
+      devices: [
+        'Blender (1)',
+        'TV (1)',
+        'Fan (3)',
+        'Bulb (8)',
+        'Decoder (1)'
       ],
       bestFor: '3-4 bedroom homes',
+      energyOutput: '6-7kWh daily'
+    },
+    {
+      name: 'Deluxe Home System',
+      price: 1200000,
+      capacity: '2.5kVA',
+      features: [
+        '6x 180W Solar Panels',
+        '4x 100Ah Batteries',
+        '2500W Inverter',
+        'Professional Installation',
+        '3-Year Warranty',
+        'Basic Monitoring'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (1)',
+        'Washing Machine (1)',
+        'TV (1)',
+        'Fan (2)',
+        'Bulb (10)',
+        'Decoder (1)'
+      ],
+      bestFor: '4-5 bedroom homes with appliances',
+      energyOutput: '8-10kWh daily',
       popular: true
     },
     {
-      name: 'Premium Home',
-      price: 2500000,
-      capacity: '8kVA',
+      name: 'Ultimate Home Solution',
+      price: 1800000,
+      capacity: '3kVA',
       features: [
-        '12x 400W Solar Panels',
-        '9.6kWh Lithium Battery',
-        '8kVA Hybrid Inverter',
+        '8x 180W Solar Panels',
+        '4x 150Ah Batteries',
+        '3000W Inverter',
+        'Professional Installation',
+        '3-Year Warranty',
+        'Smart Monitoring'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (1)',
+        'Washing Machine (1)',
+        'TV (2)',
+        'Fan (3)',
+        'Bulb (15)'
+      ],
+      bestFor: 'Large homes with multiple appliances',
+      energyOutput: '12-15kWh daily'
+    },
+    {
+      name: '3.5KVA Solar System',
+      price: 2300000,
+      capacity: '3.5kVA',
+      features: [
+        '9x 320W Solar Panels',
+        '2x 220Ah Batteries',
+        '3.5kVA Inverter',
+        'MPPT Controller 60A',
+        'Professional Installation',
+        '5-Year Warranty'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (2)',
+        'Washing Machine (1)',
+        'TV (6)',
+        'Borehole Pump (1)'
+      ],
+      bestFor: 'Homes with borehole and heavy appliances',
+      energyOutput: '15-18kWh daily'
+    },
+    {
+      name: '2.5KVA Solar System',
+      price: 1900000,
+      capacity: '2.5kVA',
+      features: [
+        '6x 200W Solar Panels',
+        '2x 220Ah Batteries',
+        '2.5kVA Inverter',
+        'PWM 60A Controller',
+        'Standard Installation',
+        '3-Year Warranty'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (1)',
+        'Washing Machine (1)',
+        'TV (2)',
+        'Fan (3)'
+      ],
+      bestFor: 'Medium homes with essential appliances',
+      energyOutput: '10-12kWh daily'
+    },
+    {
+      name: '5kVA Solar System',
+      price: 3900000,
+      capacity: '5kVA',
+      features: [
+        '12x 320W Solar Panels',
+        '4x 220Ah Batteries',
+        '5kVA Inverter',
+        'MPPT Controller 60A',
+        'Advanced Installation',
+        '5-Year Warranty'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (1)',
+        'Washing Machine (1)',
+        'TV (2)',
+        'Fan (3)'
+      ],
+      bestFor: 'Large homes or small offices',
+      energyOutput: '25-30kWh daily'
+    },
+    {
+      name: '10.5kW Lithium System',
+      price: 3100000,
+      capacity: '10.5kW',
+      features: [
+        '6x 460W Solar Panels',
+        '10.5kWh Lithium Battery',
+        '3kVA Inverter',
+        'Advanced Installation',
+        '5-Year Warranty',
+        'Smart Monitoring'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (1)',
+        'Washing Machine (1)',
+        'TV (2)',
+        'Fan (3)',
+        'Borehole Pump (1)'
+      ],
+      bestFor: 'Medium homes & offices',
+      energyOutput: '20-25kWh daily'
+    },
+    {
+      name: '10kW Lithium System',
+      price: 5400000,
+      capacity: '10kW',
+      features: [
+        '12x 460W Solar Panels',
+        '10kWh Lithium Battery',
+        '15kVA Inverter',
         'Professional Installation',
         '5-Year Warranty',
-        'Smart Monitoring',
-        'Surge Protection'
+        '24/7 Support'
       ],
-      bestFor: 'Large homes/offices'
+      devices: [
+        'Fridge (2)',
+        'Blender (2)',
+        'Washing Machine (1)',
+        'TV (3)',
+        'Fan (5)',
+        'Borehole Pump (1)',
+        'Air Conditioner (1)'
+      ],
+      bestFor: 'Large homes & businesses',
+      energyOutput: '35-40kWh daily',
+      popular: true
     },
     {
-      name: 'Commercial Lite',
-      price: 4500000,
-      capacity: '15kVA',
+      name: '15kW Lithium System',
+      price: 7800000,
+      capacity: '15kW',
       features: [
-        '24x 400W Solar Panels',
-        '20kWh Lithium Battery',
-        '15kVA 3-Phase Inverter',
-        'Commercial Installation',
-        '5-Year Warranty',
-        'Advanced Monitoring',
-        'Diesel Generator Integration'
-      ],
-      bestFor: 'Small businesses'
-    },
-    {
-      name: 'Enterprise Solution',
-      price: 9800000,
-      capacity: '25kVA',
-      features: [
-        '40x 400W Solar Panels',
-        '40kWh Lithium Battery',
-        '25kVA 3-Phase Inverter',
+        '12x 460W Solar Panels (Premium)',
+        '15kWh Lithium Battery',
+        '10kVA Inverter',
         'Industrial Installation',
         '10-Year Warranty',
         'Energy Management System',
         'Priority Support'
       ],
-      bestFor: 'Factories/large facilities'
+      devices: [
+        'Fridge (3)',
+        'Blender (2)',
+        'Washing Machine (2)',
+        'TV (5)',
+        'Fan (8)',
+        'Borehole Pump (1)',
+        'Air Conditioner (3)',
+        'Office Equipment'
+      ],
+      bestFor: 'Commercial establishments',
+      energyOutput: '50-60kWh daily'
     }
   ];
 
@@ -85,10 +261,10 @@ const SolarPackagesPage = () => {
         <div className="text-center mb-16 animate-fadeIn">
           <h1 className="text-4xl md:text-5xl font-bold text-[var(--text)] flex items-center justify-center gap-3">
             <FaSolarPanel className="text-[var(--primary-neon)]" />
-            Solar Package Solutions
+            Complete Solar Package Solutions
           </h1>
           <p className="text-xl text-[var(--text-muted)] mt-4 max-w-2xl mx-auto">
-            Complete solar systems for every need - from small homes to large enterprises
+            Comprehensive solar systems for every need - from small homes to large enterprises in Benin
           </p>
         </div>
 
@@ -114,12 +290,17 @@ const SolarPackagesPage = () => {
                 ₦{pkg.price.toLocaleString()}
               </div>
 
-              <div className="flex items-center gap-2 text-[var(--text-muted)] mb-6">
+              <div className="flex items-center gap-2 text-[var(--text-muted)] mb-4">
                 <FaBatteryFull />
                 <span>{pkg.capacity} System Capacity</span>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <div className="flex items-center gap-2 text-[var(--text-muted)] mb-6">
+                <FaTachometerAlt />
+                <span>Energy Output: {pkg.energyOutput}</span>
+              </div>
+
+              <ul className="space-y-3 mb-6">
                 {pkg.features.map((feature, idx) => (
                   <li 
                     key={idx}
@@ -131,9 +312,23 @@ const SolarPackagesPage = () => {
                 ))}
               </ul>
 
+              <div className="mt-6 mb-4">
+                <p className="font-medium text-[var(--text)] flex items-center gap-2 mb-2">
+                  <FaPlug className="text-[var(--primary-neon)]" />
+                  Can Power:
+                </p>
+                <ul className="grid grid-cols-2 gap-1">
+                  {pkg.devices.map((device, idx) => (
+                    <li key={idx} className="text-[var(--text-muted)] text-sm">
+                      • {device}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
               <a
                 href="https://wa.me/2348134553751"
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[var(--primary-neon)] text-[var(--bg)] rounded-lg font-bold hover:shadow-glow"
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[var(--primary-neon)] text-[var(--bg)] rounded-lg font-bold hover:shadow-glow mt-4"
               >
                 <FaWhatsapp /> Get Package Details
               </a>
@@ -149,32 +344,69 @@ const SolarPackagesPage = () => {
           </h2>
           
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full min-w-max">
               <thead>
                 <tr className="text-left border-b border-[var(--border)]">
-                  <th className="pb-4 text-[var(--text)]">Feature</th>
+                  <th className="pb-4 text-[var(--text)] min-w-[200px]">Feature</th>
                   {packages.map((pkg, index) => (
-                    <th key={index} className="pb-4 text-[var(--text)]">{pkg.name}</th>
+                    <th key={index} className="pb-4 text-[var(--text)] min-w-[180px]">{pkg.name}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
-                {['Capacity', 'Battery Storage', 'Warranty', 'Monitoring', 'Support'].map((feature, rowIndex) => (
-                  <tr key={rowIndex} className="border-b border-[var(--border)]">
-                    <td className="py-4 text-[var(--text-muted)]">{feature}</td>
-                    {packages.map((pkg, pkgIndex) => (
-                      <td key={pkgIndex} className="py-4 text-[var(--text)]">
-                        {{
-                          'Capacity': pkg.capacity,
-                          'Battery Storage': pkg.features.find(f => f.includes('kWh'))?.match(/\d+kWh/)?.[0] || '-',
-                          'Warranty': pkg.features.find(f => f.includes('Year'))?.match(/\d+-Year/)?.[0] || '-',
-                          'Monitoring': pkg.features.some(f => f.includes('Monitoring')) ? '✓' : '-',
-                          'Support': pkg.features.some(f => f.includes('Support')) ? '24/7' : 'Business Hours'
-                        }[feature]}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
+                <tr className="border-b border-[var(--border)]">
+                  <td className="py-4 text-[var(--text-muted)]">Capacity</td>
+                  {packages.map((pkg, index) => (
+                    <td key={index} className="py-4 text-[var(--text)] font-medium">
+                      {pkg.capacity}
+                    </td>
+                  ))}
+                </tr>
+                <tr className="border-b border-[var(--border)]">
+                  <td className="py-4 text-[var(--text-muted)]">Price</td>
+                  {packages.map((pkg, index) => (
+                    <td key={index} className="py-4 text-[var(--text)] font-medium">
+                      ₦{pkg.price.toLocaleString()}
+                    </td>
+                  ))}
+                </tr>
+                <tr className="border-b border-[var(--border)]">
+                  <td className="py-4 text-[var(--text-muted)]">Daily Energy Output</td>
+                  {packages.map((pkg, index) => (
+                    <td key={index} className="py-4 text-[var(--text)]">
+                      {pkg.energyOutput}
+                    </td>
+                  ))}
+                </tr>
+                <tr className="border-b border-[var(--border)]">
+                  <td className="py-4 text-[var(--text-muted)]">Key Appliances</td>
+                  {packages.map((pkg, index) => (
+                    <td key={index} className="py-4 text-[var(--text)]">
+                      <ul className="space-y-1">
+                        {pkg.devices.slice(0, 3).map((device, idx) => (
+                          <li key={idx} className="text-sm">• {device}</li>
+                        ))}
+                        {pkg.devices.length > 3 && <li className="text-sm">+ {pkg.devices.length - 3} more</li>}
+                      </ul>
+                    </td>
+                  ))}
+                </tr>
+                <tr className="border-b border-[var(--border)]">
+                  <td className="py-4 text-[var(--text-muted)]">Warranty</td>
+                  {packages.map((pkg, index) => (
+                    <td key={index} className="py-4 text-[var(--text)]">
+                      {pkg.features.find(f => f.includes('Warranty')) || '-'}
+                    </td>
+                  ))}
+                </tr>
+                <tr>
+                  <td className="py-4 text-[var(--text-muted)]">Best For</td>
+                  {packages.map((pkg, index) => (
+                    <td key={index} className="py-4 text-[var(--text)]">
+                      {pkg.bestFor}
+                    </td>
+                  ))}
+                </tr>
               </tbody>
             </table>
           </div>
@@ -187,22 +419,40 @@ const SolarPackagesPage = () => {
             Package FAQs
           </h2>
           
-          <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="border border-[var(--border)] rounded-lg p-6">
               <h3 className="text-xl font-semibold text-[var(--text)] mb-2">
-                Can I customize these packages?
+                What's included in the package price?
               </h3>
               <p className="text-[var(--text-muted)]">
-                Yes! All packages can be modified to meet your specific needs. Contact us for custom solutions.
+                All prices include solar panels, batteries, inverter, charge controller, installation, VAT, and basic commissioning. Structural modifications are quoted separately.
               </p>
             </div>
 
             <div className="border border-[var(--border)] rounded-lg p-6">
               <h3 className="text-xl font-semibold text-[var(--text)] mb-2">
-                What's included in the price?
+                Can I customize these packages?
               </h3>
               <p className="text-[var(--text-muted)]">
-                Prices include equipment, installation, VAT, and basic commissioning. Excludes structural modifications.
+                Absolutely! We can modify any package to meet your specific energy needs. Contact us for custom solutions tailored to your home or business.
+              </p>
+            </div>
+
+            <div className="border border-[var(--border)] rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-[var(--text)] mb-2">
+                How long does installation take?
+              </h3>
+              <p className="text-[var(--text-muted)]">
+                Most residential installations take 2-3 days. Commercial systems may take 5-7 days. We provide a detailed timeline after site assessment.
+              </p>
+            </div>
+
+            <div className="border border-[var(--border)] rounded-lg p-6">
+              <h3 className="text-xl font-semibold text-[var(--text)] mb-2">
+                What maintenance is required?
+              </h3>
+              <p className="text-[var(--text-muted)]">
+                Solar systems require minimal maintenance. We recommend panel cleaning every 3-6 months and battery checks annually. We offer maintenance packages.
               </p>
             </div>
           </div>
@@ -211,25 +461,28 @@ const SolarPackagesPage = () => {
         {/* Final CTA */}
         <div className="text-center border-t border-[var(--border)] pt-12">
           <h3 className="text-2xl font-bold text-[var(--text)] mb-4">
-            Need a Custom Solution?
+            Need a Custom Solar Solution?
           </h3>
           <p className="text-[var(--text-muted)] mb-8 max-w-2xl mx-auto">
-            Our engineers can design a bespoke solar system tailored to your exact energy requirements
+            Our engineers will design a bespoke solar system tailored to your exact energy requirements in Benin
           </p>
-          <div className="flex justify-center gap-6">
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
             <a
-              href="https://wa.me/2348118532900"
-              className="px-8 py-4 bg-[var(--primary-neon)] text-[var(--bg)] rounded-xl font-bold hover:shadow-glow flex items-center gap-2"
+              href="https://wa.me/2348134553751"
+              className="px-8 py-4 bg-[var(--primary-neon)] text-[var(--bg)] rounded-xl font-bold hover:shadow-glow flex items-center justify-center gap-2"
             >
-              <FaWhatsapp /> Chat with Engineer
+              <FaWhatsapp /> Chat with Solar Engineer
             </a>
             <a
-              href="tel:+2348118532900"
-              className="px-8 py-4 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-xl font-bold hover:bg-[var(--primary-neon)/10] flex items-center gap-2"
+              href="tel:+2348134553751"
+              className="px-8 py-4 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-xl font-bold hover:bg-[var(--primary-neon)/10] flex items-center justify-center gap-2"
             >
-              <FaPhoneAlt /> Call +234 811 853 2900
+              <FaPhoneAlt /> Call +234 813 455 3751
             </a>
           </div>
+          <p className="text-sm text-[var(--text-muted)] mt-6">
+            Free site assessment and energy audit for all Benin City residents
+          </p>
         </div>
       </div>
     </section>

@@ -1,55 +1,97 @@
 import React from 'react';
-import { FaWhatsapp, FaSolarPanel, FaBatteryFull, FaTachometerAlt, FaRegStar, FaPhoneAlt } from 'react-icons/fa';
+import { FaWhatsapp, FaSolarPanel, FaBatteryFull, FaTachometerAlt, FaRegStar, FaPhoneAlt, FaPlug, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const SolarPackages = () => {
   const packages = [
     {
-      name: 'Starter Home Solar Package',
-      price: 850000,
-      capacity: '3kVA',
+      name: 'Mini Solar Package',
+      price: 450000,
+      capacity: '1kVA',
       features: [
-        '4x 400W Solar Panels',
-        '3.5kWh Lithium Battery',
-        '3kVA Inverter',
+        '2x 180W Solar Panels',
+        '1x 100Ah Battery',
+        '1000W Inverter',
         'Basic Installation',
         '1-Year Warranty'
       ],
+      devices: [
+        'TV (1)',
+        'Fan (2)',
+        'Bulb (6)',
+        'Decoder (1)'
+      ],
       popular: false,
-      coverage: '2-3 bedroom home in Benin',
-      energyOutput: '8-10kWh daily'
+      coverage: 'Small apartment or 1-2 room home',
+      energyOutput: '2-3kWh daily'
     },
     {
-      name: 'Family Solar Solution',
-      price: 1850000,
-      capacity: '5kVA',
+      name: 'Essential Home Package',
+      price: 760000,
+      capacity: '1.5kVA',
       features: [
-        '8x 400W Solar Panels',
-        '7kWh Lithium Battery',
-        '5kVA Hybrid Inverter',
+        '3x 180W Solar Panels',
+        '2x 100Ah Batteries',
+        '1500W Inverter',
+        'Basic Installation',
+        '1-Year Warranty'
+      ],
+      devices: [
+        'TV (1)',
+        'Fan (3)',
+        'Bulb (8)',
+        'Decoder (1)'
+      ],
+      popular: false,
+      coverage: '2-3 bedroom homes',
+      energyOutput: '4-5kWh daily'
+    },
+    {
+      name: 'Premium Home System',
+      price: 2300000,
+      capacity: '3.5kVA',
+      features: [
+        '9x 320W Solar Panels',
+        '2x 220Ah Batteries',
+        '3.5kVA Inverter',
+        'MPPT Controller 60A',
         'Professional Installation',
-        '3-Year Warranty',
-        'Smart Monitoring'
+        '5-Year Warranty'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (2)',
+        'Washing Machine (1)',
+        'TV (6)',
+        'Borehole Pump (1)'
       ],
       popular: true,
-      coverage: '4-5 bedroom home in Edo',
-      energyOutput: '16-20kWh daily'
+      coverage: 'Homes with borehole and appliances',
+      energyOutput: '15-18kWh daily'
     },
     {
-      name: 'Premium Home Solar System',
-      price: 3500000,
-      capacity: '10kVA',
+      name: 'Commercial Solar System',
+      price: 3900000,
+      capacity: '5kVA',
       features: [
-        '16x 400W Solar Panels',
-        '14kWh Lithium Battery',
-        '10kVA Hybrid Inverter',
+        '12x 320W Solar Panels',
+        '4x 220Ah Batteries',
+        '5kVA Inverter',
+        'MPPT Controller 60A',
         'Advanced Installation',
-        '5-Year Warranty',
-        'Smart Home Integration',
-        '24/7 Support'
+        '5-Year Warranty'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (1)',
+        'Washing Machine (1)',
+        'TV (2)',
+        'Fan (3)',
+        'Air Conditioner (1)'
       ],
       popular: false,
-      coverage: 'Large homes & businesses in Benin City',
-      energyOutput: '32-40kWh daily'
+      coverage: 'Large homes or small offices',
+      energyOutput: '25-30kWh daily'
     }
   ];
 
@@ -103,7 +145,7 @@ const SolarPackages = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {packages.map((pkg, index) => (
             <div 
               key={index}
@@ -128,7 +170,7 @@ const SolarPackages = () => {
                 </div>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-4">
                 {pkg.features.map((feature, idx) => (
                   <li 
                     key={idx}
@@ -140,6 +182,25 @@ const SolarPackages = () => {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-4 mb-6">
+                <p className="font-medium text-[var(--text)] flex items-center gap-2">
+                  <FaPlug className="text-[var(--primary-neon)]" />
+                  Can Power:
+                </p>
+                <ul className="mt-2 space-y-2">
+                  {pkg.devices.map((device, idx) => (
+                    <li key={idx} className="text-[var(--text-muted)] text-sm">
+                      • {device}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex items-center justify-center gap-2 text-sm text-[var(--primary)] mb-4">
+                <FaTachometerAlt />
+                Energy Output: {pkg.energyOutput}
+              </div>
 
               <a
                 href="https://wa.me/2348134553751"
@@ -156,13 +217,20 @@ const SolarPackages = () => {
           <p className="text-[var(--text-muted)] mb-4">
             Prices include VAT and professional installation in Benin City. Custom solar solutions available.
           </p>
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              to="/solar-packages"
+              className="flex items-center gap-2 px-6 py-3 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg font-bold hover:bg-[var(--primary-neon)/10] transition-colors"
+              aria-label="View all solar packages in Benin"
+            >
+              View All Packages <FaArrowRight className="text-sm" />
+            </Link>
             <a
-              href="tel:+2348060771104"
-              className="flex items-center gap-2 px-6 py-2 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)/10]"
+              href="tel:+2348134553751"
+              className="flex items-center gap-2 px-6 py-3 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg font-bold hover:bg-[var(--primary-neon)/10] transition-colors"
               aria-label="Call for custom solar quote in Edo State"
             >
-              <FaPhoneAlt /> Call for Custom Solar Quote
+              <FaPhoneAlt /> Call for Custom Quote
             </a>
           </div>
           <p className="text-sm text-[var(--text-muted)] mt-4">
@@ -174,7 +242,7 @@ const SolarPackages = () => {
         <div className="sr-only" aria-hidden="true">
           <p>Solar packages Benin | Solar system prices Edo | Solar panel installation Nigeria</p>
           <p>Best solar packages in Benin City | Affordable solar solutions Edo State | SunPeak solar offers</p>
-          <p>3kVA solar system price | 5kVA solar package cost | 10kVA solar installation Benin</p>
+          <p>1kVA solar system price | 3.5kVA solar package cost | 5kVA solar installation Benin</p>
         </div>
       </div>
     </section>
@@ -182,173 +250,3 @@ const SolarPackages = () => {
 };
 
 export default SolarPackages;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import { FaWhatsapp, FaSolarPanel, FaBatteryFull, FaTachometerAlt, FaRegStar, FaPhoneAlt } from 'react-icons/fa';
-
-// const SolarPackages = () => {
-//   const packages = [
-//     {
-//       name: 'Starter Home',
-//       price: 850000,
-//       capacity: '3kVA',
-//       features: [
-//         '4x 400W Solar Panels',
-//         '3.5kWh Lithium Battery',
-//         '3kVA Inverter',
-//         'Basic Installation',
-//         '1-Year Warranty'
-//       ],
-//       popular: false
-//     },
-//     {
-//       name: 'Family Solution',
-//       price: 1850000,
-//       capacity: '5kVA',
-//       features: [
-//         '8x 400W Solar Panels',
-//         '7kWh Lithium Battery',
-//         '5kVA Hybrid Inverter',
-//         'Professional Installation',
-//         '3-Year Warranty',
-//         'Smart Monitoring'
-//       ],
-//       popular: true
-//     },
-//     {
-//       name: 'Premium Home',
-//       price: 3500000,
-//       capacity: '10kVA',
-//       features: [
-//         '16x 400W Solar Panels',
-//         '14kWh Lithium Battery',
-//         '10kVA Hybrid Inverter',
-//         'Advanced Installation',
-//         '5-Year Warranty',
-//         'Smart Home Integration',
-//         '24/7 Support'
-//       ],
-//       popular: false
-//     }
-//   ];
-
-//   return (
-//     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[var(--bg)]">
-//       <div className="max-w-7xl mx-auto">
-//         <div className="text-center mb-12 animate-fadeIn">
-//           <h2 className="text-3xl md:text-4xl font-bold text-[var(--text)] flex items-center justify-center gap-3">
-//             <FaSolarPanel className="text-[var(--primary-neon)]" />
-//             Solar Package Solutions
-//           </h2>
-//           <p className="text-xl text-[var(--text-muted)] mt-2">
-//             Pre-configured systems for different energy needs
-//           </p>
-//         </div>
-
-//         <div className="grid md:grid-cols-3 gap-8">
-//           {packages.map((pkg, index) => (
-//             <div 
-//               key={index}
-//               className={`relative p-8 rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] hover:border-[var(--primary-neon)] transition-colors ${pkg.popular ? 'ring-2 ring-[var(--primary-neon)]' : ''}`}
-//             >
-//               {pkg.popular && (
-//                 <div className="absolute top-0 right-0 bg-[var(--primary-neon)] text-[var(--bg)] px-4 py-1 rounded-bl-2xl rounded-tr-2xl text-sm flex items-center gap-1">
-//                   <FaRegStar /> Most Popular
-//                 </div>
-//               )}
-              
-//               <div className="text-center mb-6">
-//                 <h3 className="text-2xl font-bold text-[var(--text)]">{pkg.name}</h3>
-//                 <div className="text-[var(--primary-neon)] text-4xl font-bold my-4">
-//                   ₦{(pkg.price).toLocaleString()}
-//                 </div>
-//                 <div className="flex items-center justify-center gap-2 text-[var(--text-muted)]">
-//                   <FaBatteryFull />
-//                   <span>{pkg.capacity} System</span>
-//                 </div>
-//               </div>
-
-//               <ul className="space-y-3 mb-8">
-//                 {pkg.features.map((feature, idx) => (
-//                   <li 
-//                     key={idx}
-//                     className="flex items-center gap-2 text-[var(--text-muted)]"
-//                   >
-//                     <span className="text-[var(--primary-neon)]">✓</span>
-//                     {feature}
-//                   </li>
-//                 ))}
-//               </ul>
-
-//               <a
-//                 href="https://wa.me/2348134553751"
-//                 className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-[var(--primary-neon)] text-[var(--bg)] rounded-lg font-bold hover:shadow-glow"
-//               >
-//                 <FaWhatsapp /> Get This Package
-//               </a>
-//             </div>
-//           ))}
-//         </div>
-
-//         <div className="mt-12 text-center border-t border-[var(--border)] pt-12">
-//           <p className="text-[var(--text-muted)] mb-4">
-//             Prices include VAT and basic installation. Custom solutions available.
-//           </p>
-//           <div className="flex justify-center gap-4">
-//             <a
-//               href="tel:+2348060771104"
-//               className="flex items-center gap-2 px-6 py-2 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)/10]"
-//             >
-//               <FaPhoneAlt /> Call for Custom Quote
-//             </a>
-//           </div>
-//           <p className="text-sm text-[var(--text-muted)] mt-4">
-//             All packages come with free site assessment and energy audit
-//           </p>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default SolarPackages;
