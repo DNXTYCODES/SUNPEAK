@@ -187,7 +187,7 @@ const SolarPackagesPage = () => {
       features: [
         '12x 320W Solar Panels',
         '4x 220Ah Batteries',
-        '5kVA Inverter',
+        '5kVA Inverter, 48V',
         'MPPT Controller 60A',
         'Advanced Installation',
         '5-Year Warranty'
@@ -203,12 +203,12 @@ const SolarPackagesPage = () => {
       energyOutput: '25-30kWh daily'
     },
     {
-      name: '10.5kW Lithium System',
+      name: '5kW Lithium System',
       price: 3100000,
       capacity: '10.5kW',
       features: [
         '6x 460W Solar Panels',
-        '10.5kWh Lithium Battery',
+        '5kWh Lithium Battery',
         '3kVA Inverter',
         'Advanced Installation',
         '5-Year Warranty',
@@ -252,7 +252,7 @@ const SolarPackagesPage = () => {
     },
     {
       name: '15kW Lithium System',
-      price: 7800000,
+      price: 7000000,
       capacity: '15kW',
       features: [
         '12x 460W Solar Panels (Premium)',
@@ -274,6 +274,32 @@ const SolarPackagesPage = () => {
         'Office Equipment'
       ],
       bestFor: 'Commercial establishments',
+      energyOutput: '50-60kWh daily'
+    },
+    {
+      name: '15kW Lithium System',
+      price: 7800000,
+      capacity: '17.5kW',
+      features: [
+        '12x 560W Solar Panels (Premium)',
+        '15kWh Lithium Battery',
+        '10kVA Inverter',
+        'Industrial Installation',
+        '10-Year Warranty',
+        'Energy Management System',
+        'Priority Support'
+      ],
+      devices: [
+        'Fridge (3)',
+        'Blender (2)',
+        'Washing Machine (2)',
+        'TV (5)',
+        'Fan (8)',
+        'Borehole Pump (1)',
+        'Air Conditioner (5)',
+        'Office Equipment'
+      ],
+      bestFor: 'High-end Commercial establishments',
       energyOutput: '50-60kWh daily'
     }
   ];
