@@ -165,10 +165,10 @@ const SolarPackages = () => {
                 <div className="text-[var(--primary-neon)] text-4xl font-bold my-4" itemProp="price">
                   ₦{(pkg.price).toLocaleString()}
                 </div>
-               // <div className="flex items-center justify-center gap-2 text-[var(--text-muted)]">
-                 // <FaBatteryFull />
-                 // <span itemProp="description">{pkg.capacity} System for {pkg.coverage}</span>
-               // </div>
+              {/*   <div className="flex items-center justify-center gap-2 text-[var(--text-muted)]">
+                  <FaBatteryFull />
+                  <span itemProp="description">{pkg.capacity} System for {pkg.coverage}</span>
+                </div> */}
               </div>
 
               <ul className="space-y-3 mb-4">
