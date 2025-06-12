@@ -91,6 +91,28 @@ const SolarPackagesPage = () => {
       popular: true
     },
     {
+      name: '2.5KVA Solar System',
+      price: 1550000,
+      capacity: '2.5kVA',
+      features: [
+        '6x 200W Solar Panels',
+        '2x 220Ah Batteries',
+        '2.5kVA Inverter, 24V',
+        'PMW Controller 60A',
+        'Standard Installation',
+        '3-Year Warranty'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (1)',
+        'Washing Machine (1)',
+        'TV (2)',
+        'Fan (3)'
+      ],
+      bestFor: 'Medium homes with essential appliances',
+      energyOutput: '10-12kWh daily'
+    },
+    {
       name: 'Ultimate Home Solution',
       price: 1800000,
       capacity: '3kVA',
@@ -116,28 +138,6 @@ const SolarPackagesPage = () => {
     },
     {
       name: '3.5KVA Solar System',
-      price: 2300000,
-      capacity: '3.5kVA',
-      features: [
-        '9x 320W Solar Panels',
-        '2x 220Ah Batteries',
-        '3.5kVA Inverter, 24V',
-        'MPPT Controller 60A',
-        'Professional Installation',
-        '5-Year Warranty'
-      ],
-      devices: [
-        'Fridge (1)',
-        'Blender (2)',
-        'Washing Machine (1)',
-        'TV (6)',
-        'Borehole Pump (1)'
-      ],
-      bestFor: 'Homes with borehole and heavy appliances',
-      energyOutput: '15-18kWh daily'
-    },
-    {
-      name: '3.5KVA Solar System',
       price: 1900000,
       capacity: '2.5kVA',
       features: [
@@ -159,48 +159,26 @@ const SolarPackagesPage = () => {
       energyOutput: '10-12kWh daily'
     },
     {
-      name: '2.5KVA Solar System',
-      price: 1550000,
-      capacity: '2.5kVA',
+      name: '3.5KVA Solar System',
+      price: 2300000,
+      capacity: '3.5kVA',
       features: [
-        '6x 200W Solar Panels',
+        '9x 320W Solar Panels',
         '2x 220Ah Batteries',
-        '2.5kVA Inverter, 24V',
-        'PMW Controller 60A',
-        'Standard Installation',
-        '3-Year Warranty'
-      ],
-      devices: [
-        'Fridge (1)',
-        'Blender (1)',
-        'Washing Machine (1)',
-        'TV (2)',
-        'Fan (3)'
-      ],
-      bestFor: 'Medium homes with essential appliances',
-      energyOutput: '10-12kWh daily'
-    },
-    {
-      name: '5kVA Solar System',
-      price: 3900000,
-      capacity: '5kVA',
-      features: [
-        '12x 320W Solar Panels',
-        '4x 220Ah Batteries',
-        '5kVA Inverter, 48V',
+        '3.5kVA Inverter, 24V',
         'MPPT Controller 60A',
-        'Advanced Installation',
+        'Professional Installation',
         '5-Year Warranty'
       ],
       devices: [
         'Fridge (1)',
-        'Blender (1)',
+        'Blender (2)',
         'Washing Machine (1)',
-        'TV (2)',
-        'Fan (3)'
+        'TV (6)',
+        'Borehole Pump (1)'
       ],
-      bestFor: 'Large homes or small offices',
-      energyOutput: '25-30kWh daily'
+      bestFor: 'Homes with borehole and heavy appliances',
+      energyOutput: '15-18kWh daily'
     },
     {
       name: '5kW Lithium System',
@@ -224,6 +202,28 @@ const SolarPackagesPage = () => {
       ],
       bestFor: 'Medium homes & offices',
       energyOutput: '20-25kWh daily'
+    },
+    {
+      name: '5kVA Solar System',
+      price: 3900000,
+      capacity: '5kVA',
+      features: [
+        '12x 320W Solar Panels',
+        '4x 220Ah Batteries',
+        '5kVA Inverter, 48V',
+        'MPPT Controller 60A',
+        'Advanced Installation',
+        '5-Year Warranty'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (1)',
+        'Washing Machine (1)',
+        'TV (2)',
+        'Fan (3)'
+      ],
+      bestFor: 'Large homes or small offices',
+      energyOutput: '25-30kWh daily'
     },
     {
       name: '10kW Lithium System',
