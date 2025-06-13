@@ -21,7 +21,8 @@ const SolarPackagesPage = () => {
         'Decoder (1)'
       ],
       bestFor: 'Small apartment or 1-2 room home',
-      energyOutput: '2-3kWh daily'
+      energyOutput: '2-3kWh daily',
+      popular: true
     },
     {
       name: 'Essential Home Package',
