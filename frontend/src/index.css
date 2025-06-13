@@ -23,6 +23,23 @@
   --text-muted: #666666;
 }
 
+
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s infinite;
+}
+
+
+
 .py-12 {
   background: var(--card-bg);
 }
