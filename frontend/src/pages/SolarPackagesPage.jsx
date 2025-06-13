@@ -6,7 +6,7 @@ const SolarPackagesPage = () => {
     {
       name: 'Mini Solar Package',
       price: 450000,
-      capacity: '1kVA',
+      capacity: '1000W',
       features: [
         '2x 180W Solar Panels',
         '1x 100Ah Battery',
@@ -26,7 +26,7 @@ const SolarPackagesPage = () => {
     {
       name: 'Essential Home Package',
       price: 760000,
-      capacity: '1.5kVA',
+      capacity: '1000W',
       features: [
         '3x 180W Solar Panels',
         '220Ah Batteries',
@@ -46,7 +46,7 @@ const SolarPackagesPage = () => {
     {
       name: 'Bronze Home Package',
       price: 900000,
-      capacity: '2kVA',
+      capacity: '1kVA',
       features: [
         '4x 180W Solar Panels',
         '220Ah Batteries',
@@ -67,10 +67,10 @@ const SolarPackagesPage = () => {
     {
       name: 'Silver Home System',
       price: 1200000,
-      capacity: '2.5kVA',
+      capacity: '1.5kVA',
       features: [
-        '6x 180W Solar Panels',
-        '4x 100Ah Batteries',
+        '3x 320W Solar Panels',
+        '1x 220Ah Batteries',
         '1.5KVA Inverter, 12V',
         'MPPT Controller 60A',
         'Professional Installation',
@@ -115,14 +115,14 @@ const SolarPackagesPage = () => {
     {
       name: 'Platinum Home Solution',
       price: 1800000,
-      capacity: '3kVA',
+      capacity: '2.5kVA',
       features: [
         '6x 320W Solar Panels',
-        '4x 150Ah Batteries',
+        '1x 220Ah Batteries',
         '2.5KVA Inverter, 24V',
+        'MPPT Controller 60A',
         'Professional Installation',
         '3-Year Warranty',
-        'MPPT Controller 60A',
         'Smart Monitoring'
       ],
       devices: [
@@ -139,7 +139,7 @@ const SolarPackagesPage = () => {
     {
       name: 'Premium Home System',
       price: 1900000,
-      capacity: '2.5kVA',
+      capacity: '3.5kVA',
       features: [
         '6x 320W Solar Panels',
         '2x 220Ah Batteries',
@@ -183,7 +183,7 @@ const SolarPackagesPage = () => {
     {
       name: 'PowerMax Lithium System',
       price: 3100000,
-      capacity: '10.5kW',
+      capacity: '5KW',
       features: [
         '6x 460W Solar Panels',
         '5kWh Lithium Battery',
@@ -279,10 +279,10 @@ const SolarPackagesPage = () => {
     {
       name: 'UltraPower plus Lithium System',
       price: 7800000,
-      capacity: '17.5kW',
+      capacity: '17.5kWh',
       features: [
         '12x 560W Solar Panels (Premium)',
-        '15kWh Lithium Battery',
+        '17.5kW Lithium Battery',
         '10kVA Inverter',
         'Industrial Installation',
         '10-Year Warranty',

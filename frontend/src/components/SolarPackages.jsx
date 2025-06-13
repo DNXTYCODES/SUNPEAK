@@ -7,7 +7,7 @@ const SolarPackages = () => {
     {
       name: 'Mini Solar Package',
       price: 450000,
-      capacity: '1kVA',
+      capacity: '1000W',
       features: [
         '2x 180W Solar Panels',
         '1x 100Ah Battery',
@@ -21,14 +21,13 @@ const SolarPackages = () => {
         'Bulb (6)',
         'Decoder (1)'
       ],
-      popular: false,
-      coverage: 'Small apartment or 1-2 room home',
+      bestFor: 'Small apartment or 1-2 room home',
       energyOutput: '2-3kWh daily'
     },
     {
       name: 'Essential Home Package',
       price: 760000,
-      capacity: '1.5kVA',
+      capacity: '1000W',
       features: [
         '3x 180W Solar Panels',
         '220Ah Batteries',
@@ -42,45 +41,21 @@ const SolarPackages = () => {
         'Bulb (8)',
         'Decoder (1)'
       ],
-      popular: false,
-      coverage: '2-3 bedroom homes',
+      bestFor: '2-3 bedroom homes',
       energyOutput: '4-5kWh daily'
     },
     {
-      name: 'Premium Home System',
-      price: 2300000,
-      capacity: '3.5kVA',
+      name: 'Platinum Home Solution',
+      price: 1800000,
+      capacity: '2.5kVA',
       features: [
-        '3.5kVA, 24V',
-        '9x 320W Solar Panels',
-        '2x 220Ah Batteries',
-        //#'3.5kVA Inverter',
+        '6x 320W Solar Panels',
+        '1x 220Ah Batteries',
+        '2.5KVA Inverter, 24V',
         'MPPT Controller 60A',
         'Professional Installation',
-        '5-Year Warranty'
-      ],
-      devices: [
-        'Fridge (1)',
-        'Blender (2)',
-        'Washing Machine (1)',
-        'TV (6)',
-        'Borehole Pump (1)'
-      ],
-      popular: true,
-      coverage: 'Homes with borehole and appliances',
-      energyOutput: '15-18kWh daily'
-    },
-    {
-      name: 'Commercial Solar System',
-      price: 3900000,
-      capacity: '5kVA',
-      features: [
-        '12x 320W Solar Panels',
-        '4x 220Ah Batteries',
-        '5kVA, 48W',
-        'MPPT Controller 60A',
-        'Advanced Installation',
-        '5-Year Warranty'
+        '3-Year Warranty',
+        'Smart Monitoring'
       ],
       devices: [
         'Fridge (1)',
@@ -88,11 +63,59 @@ const SolarPackages = () => {
         'Washing Machine (1)',
         'TV (2)',
         'Fan (3)',
-        'Air Conditioner (1)'
+        'Bulb (15)'
       ],
-      popular: false,
-      coverage: 'Large homes or small offices',
-      energyOutput: '25-30kWh daily'
+      bestFor: 'Large homes with multiple appliances',
+      energyOutput: '12-15kWh daily'
+    },
+    {
+      name: 'PowerMax Lithium System',
+      price: 3100000,
+      capacity: '5KW',
+      features: [
+        '6x 460W Solar Panels',
+        '5kWh Lithium Battery',
+        '3kVA Inverter',
+        'Advanced Installation',
+        '5-Year Warranty',
+        'Smart Monitoring'
+      ],
+      devices: [
+        'Fridge (1)',
+        'Blender (1)',
+        'Washing Machine (1)',
+        'TV (2)',
+        'Fan (3)',
+        'Borehole Pump (1)'
+      ],
+      bestFor: 'Medium homes & offices',
+      energyOutput: '20-25kWh daily'
+    },
+    {
+      name: 'UltraPower plus Lithium System',
+      price: 7800000,
+      capacity: '17.5kWh',
+      features: [
+        '12x 560W Solar Panels (Premium)',
+        '17.5kW Lithium Battery',
+        '10kVA Inverter',
+        'Industrial Installation',
+        '10-Year Warranty',
+        'Energy Management System',
+        'Priority Support'
+      ],
+      devices: [
+        'Fridge (3)',
+        'Blender (2)',
+        'Washing Machine (2)',
+        'TV (5)',
+        'Fan (8)',
+        'Borehole Pump (1)',
+        'Air Conditioner (5)',
+        'Office Equipment'
+      ],
+      bestFor: 'High-end Commercial establishments',
+      energyOutput: '50-60kWh daily'
     }
   ];
 
@@ -165,10 +188,10 @@ const SolarPackages = () => {
                 <div className="text-[var(--primary-neon)] text-4xl font-bold my-4" itemProp="price">
                   ₦{(pkg.price).toLocaleString()}
                 </div>
-              {/*   <div className="flex items-center justify-center gap-2 text-[var(--text-muted)]">
+                <div className="flex items-center justify-center gap-2 text-[var(--text-muted)]">
                   <FaBatteryFull />
                   <span itemProp="description">{pkg.capacity} System for {pkg.coverage}</span>
-                </div> */}
+                </div>
               </div>
 
               <ul className="space-y-3 mb-4">
