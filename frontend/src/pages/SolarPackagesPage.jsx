@@ -434,10 +434,10 @@ const SolarPackagesPage = () => {
                   {packages.map((pkg, index) => (
                     <td key={index} className="py-4 text-[var(--text)]">
                       <ul className="space-y-1">
-                        {pkg.devices.slice(0, 3).map((device, idx) => (
+                        {pkg.devices.slice(0, 12).map((device, idx) => (
                           <li key={idx} className="text-sm">• {device}</li>
                         ))}
-                        {pkg.devices.length > 3 && <li className="text-sm">+ {pkg.devices.length - 3} more</li>}
+                        {pkg.devices.length > 12 && <li className="text-sm">+ {pkg.devices.length - 12} more</li>}
                       </ul>
                     </td>
                   ))}
