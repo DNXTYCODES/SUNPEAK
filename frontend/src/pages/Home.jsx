@@ -25,6 +25,10 @@ const Home = () => {
     <main className='bg-gray-50 text-black'>
       {/* Hero Section - Should contain the main H1 heading for the page */}
       <HeroSection />
+
+    
+      {/* Testimonials Section */}
+      <Testimonials/>
       
       {/* Products Section */}
       <section aria-labelledby="products-section-heading" className="py-12">
@@ -34,9 +38,6 @@ const Home = () => {
           <BestSeller/>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <Testimonials/>
       
       {/* Solar Packages */}
       <SolarPackages />
