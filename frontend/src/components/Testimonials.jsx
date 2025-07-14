@@ -46,7 +46,11 @@ const Testimonials = () => {
   ];
 
   const photoTestimonials = [
-    { id: 1, image: assets.solar1, caption: "Residential installation in Uselu, Benin" },
+    { id: 1, image: assets.add1, caption: "Residential installation in Uselu, Benin" },
+    { id: 1, image: assets.add2, caption: "Residential installation in Uselu, Benin" },
+    { id: 1, image: assets.add3, caption: "Residential installation in Uselu, Benin" },
+    { id: 1, image: assets.add4, caption: "Residential installation in Uselu, Benin" },
+    { id: 1, image: assets.solar1, caption: "Residential installation in Ugbowo, Benin" },
     { id: 2, image: assets.solar2, caption: "Commercial installation at Sapele Road" },
     { id: 3, image: assets.solar3, caption: "Industrial solar plant" },
     { id: 4, image: assets.solar4, caption: "Home solar system" },

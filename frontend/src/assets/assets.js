@@ -1,4 +1,8 @@
 
+import add4 from './add4.jpg'
+import add3 from './add3.jpg'
+import add2 from './add2.jpg'
+import add1 from './add1.jpg'
 import ceo from './ceo.jpg'
 import trainingvid3 from './trainingvid3.mp4'
 import trainingvid2 from './trainingvid2.mp4'
@@ -47,6 +51,10 @@ import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 
 export const assets = {
+    add1,
+    add2,
+    add3,
+    add4,
     ceo,
     trainingvid3,
     trainingvid2,
