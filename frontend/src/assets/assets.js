@@ -1,4 +1,8 @@
 
+import cert  from './cert.png'
+import pl2  from './pl2.png'
+import pl3  from './pl3.png'
+import pl1  from './pl1.png'
 import add4 from './add4.jpg'
 import add3 from './add3.jpg'
 import add2 from './add2.jpg'
@@ -51,6 +55,10 @@ import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 
 export const assets = {
+    cert,
+    pl1,
+    pl2,
+    pl3,
     add1,
     add2,
     add3,

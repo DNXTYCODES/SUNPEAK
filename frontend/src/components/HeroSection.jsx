@@ -4,7 +4,7 @@ import { assets } from '../assets/assets';
 
 const BackgroundSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [assets.solarteam, assets.solar7, assets.solar5, assets.solar8];
+  const slides = [assets.solarteam, assets.solar7, assets.solar5, assets.cert];
   const altTexts = [
     "SunPeak solar installation team working in Benin, Edo Nigeria",
     "Professional solar panel installation by SunPeak in Benin City",
@@ -31,7 +31,7 @@ const BackgroundSlideshow = () => {
           <img
             src={slide}
             alt={altTexts[index]}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-35"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--secondary-dark)] via-[var(--secondary-dark)/70] to-transparent" />
         </div>

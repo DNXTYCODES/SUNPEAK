@@ -4,6 +4,7 @@ import { assets } from "../assets/assets";
 const Testimonials = () => {
   const [showAllVideos, setShowAllVideos] = useState(false);
   const [showAllPhotos, setShowAllPhotos] = useState(false);
+  const [showAllInfo, setShowAllInfo] = useState(false);
   
   const testimonials = [
     {
@@ -47,19 +48,36 @@ const Testimonials = () => {
 
   const photoTestimonials = [
     { id: 1, image: assets.add1, caption: "Residential installation in Uselu, Benin" },
-    { id: 1, image: assets.add2, caption: "Residential installation in Uselu, Benin" },
-    { id: 1, image: assets.add3, caption: "Residential installation in Uselu, Benin" },
-    { id: 1, image: assets.add4, caption: "Residential installation in Uselu, Benin" },
-    { id: 1, image: assets.solar1, caption: "Residential installation in Ugbowo, Benin" },
-    { id: 2, image: assets.solar2, caption: "Commercial installation at Sapele Road" },
-    { id: 3, image: assets.solar3, caption: "Industrial solar plant" },
-    { id: 4, image: assets.solar4, caption: "Home solar system" },
-    { id: 5, image: assets.solar5, caption: "Restaurant solar setup" },
-    { id: 6, image: assets.solar6, caption: "Solar installation at a manufacturing plant" },
-    { id: 7, image: assets.solar7, caption: "Homeowner enjoying 24/7 power" },
-    { id: 8, image: assets.solar8, caption: "Before and after solar installation" },
-    { id: 9, image: assets.solar9, caption: "Solar panels on residential roof" },
-    { id: 10, image: assets.solar10, caption: "Large-scale commercial installation" },
+    { id: 2, image: assets.add2, caption: "Residential installation in Uselu, Benin" },
+    { id: 3, image: assets.add3, caption: "Residential installation in Uselu, Benin" },
+    { id: 4, image: assets.add4, caption: "Residential installation in Uselu, Benin" },
+    { id: 5, image: assets.solar1, caption: "Residential installation in Ugbowo, Benin" },
+    { id: 6, image: assets.solar2, caption: "Commercial installation at Sapele Road" },
+    { id: 7, image: assets.solar3, caption: "Industrial solar plant" },
+    { id: 8, image: assets.solar4, caption: "Home solar system" },
+    { id: 9, image: assets.solar5, caption: "Restaurant solar setup" },
+    { id: 10, image: assets.solar6, caption: "Solar installation at a manufacturing plant" },
+    { id: 11, image: assets.solar7, caption: "Homeowner enjoying 24/7 power" },
+    { id: 12, image: assets.solar8, caption: "Before and after solar installation" },
+    { id: 13, image: assets.solar9, caption: "Solar panels on residential roof" },
+    { id: 14, image: assets.solar10, caption: "Large-scale commercial installation" },
+  ];
+
+  const info = [
+    { id: 1, image: assets.pl1, caption: "price for our solar packages" },
+    { id: 2, image: assets.pl2, caption: "price for our solar packages" },
+    { id: 3, image: assets.pl3, caption: "our cheapest solar packages" },
+    // { id: 1, image: assets.add4, caption: "Residential installation in Uselu, Benin" },
+    // { id: 1, image: assets.solar1, caption: "Residential installation in Ugbowo, Benin" },
+    // { id: 2, image: assets.solar2, caption: "Commercial installation at Sapele Road" },
+    // { id: 3, image: assets.solar3, caption: "Industrial solar plant" },
+    // { id: 4, image: assets.solar4, caption: "Home solar system" },
+    // { id: 5, image: assets.solar5, caption: "Restaurant solar setup" },
+    // { id: 6, image: assets.solar6, caption: "Solar installation at a manufacturing plant" },
+    // { id: 7, image: assets.solar7, caption: "Homeowner enjoying 24/7 power" },
+    // { id: 8, image: assets.solar8, caption: "Before and after solar installation" },
+    // { id: 9, image: assets.solar9, caption: "Solar panels on residential roof" },
+    // { id: 10, image: assets.solar10, caption: "Large-scale commercial installation" },
   ];
 
   return (
@@ -240,6 +258,69 @@ const Testimonials = () => {
               </button>
             </div>
           )}
+        </div>
+
+        {/* important info SECTION */}
+        <div className="mb-20">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-[var(--text)] animate-fadeIn">
+            Price <span className="text-[var(--primary-neon)]">List</span>
+          </h3>
+          
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            {info.slice(0, showAllInfo ? info.length : 5).map(photo => (
+              <div 
+                key={photo.id}
+                className="group relative overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--card-bg)] shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[var(--primary-neon)] cursor-pointer"
+              >
+                <img
+                  src={photo.image}
+                  alt={photo.caption}
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                  <p className="text-white text-sm font-medium">{photo.caption}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          {info.length > 5 && (
+            <div className="text-center mt-8">
+              <button
+                onClick={() => setShowAllInfo(!showAllInfo)}
+                className="px-6 py-3 bg-[var(--bg)] text-[var(--text)] rounded-full font-medium hover:bg-[var(--primary-dark)] hover:text-white transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--primary-neon)] shadow-lg"
+                aria-expanded={showAllPhotos}
+              >
+                {showAllInfo ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clipRule="evenodd" />
+                    </svg>
+                    Show Fewer 
+                  </span>
+                ) : (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                    Show More
+                  </span>
+                )}
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* certificate section */}
+        <div className="mb-20">
+        <h2
+          className="text-3xl md:text-4xl font-bold text-center mb-12 text-[var(--text)] animate-fadeIn"
+        >
+          We are <span className="text-[var(--primary-neon)]">Certified</span>!
+        </h2>
+
+        <img src={assets.cert} className=""/>
         </div>
 
         {/* TEXT REVIEWS BELOW VIDEOS AND PHOTOS */}
