@@ -88,7 +88,7 @@ const HeroSection = () => {
               {[
                 { value: '10MW+', label: 'Installed', rating: "10000" },
                 { value: '24/7', label: 'Support', rating: "5" },
-                { value: '5Y', label: 'Warranty', rating: "5" },
+                { value: '5Y', label: 'Warranty', rating: "5" }
               ].map((stat, index) => (
                 <div 
                   key={index} 
