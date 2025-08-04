@@ -73,7 +73,7 @@ const Testimonials = () => {
   const ToggleButton = ({ expanded, onClick, showText, hideText }) => (
     <button
       onClick={onClick}
-      className="px-6 py-3 bg-[var(--primary-dark)] text-white rounded-full font-medium hover:bg-[var(--primary-darker)] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--primary-neon)] shadow-lg flex items-center gap-2"
+      className="px-6 py-3 bg-[var(--primary-dark)] text-[var(--text)] rounded-full font-medium hover:bg-[var(--primary-darker)] transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--primary-neon)] shadow-lg flex items-center gap-2 "
       aria-expanded={expanded}
     >
       {expanded ? (
