@@ -38,6 +38,7 @@ const Testimonials = () => {
 
   const videoTestimonials = [
     { id: 1, embedId: "xm33O4bcYL4", title: "SunPeak solar on the News on National Television", location: "Benin City, Edo State" },
+    { id: 1, embedId: "fQkCjTo_w7g", title: "SunPeak solar on the News on National Television", location: "Benin City, Edo State" },
     { id: 1, embedId: "hS4PWUW0nlM", title: "SunPeak solar customer testimonial from Benin, Edo State", location: "Benin City, Edo State" },
     { id: 2, embedId: "x5s6uIw1bo8", title: "SunPeak solar customer testimonial from Benin, Edo State", location: "Benin City, Edo State" },
     { id: 3, embedId: "bMQpewdkK5U", title: "SunPeak solar customer testimonial from Benin, Edo State", location: "Benin City, Edo State" },
