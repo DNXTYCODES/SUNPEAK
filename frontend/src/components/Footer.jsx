@@ -111,6 +111,18 @@ const Footer = () => {
               <li itemProp="addressCountry">Nigeria</li>
             </ul>
           </div>
+
+          
+          <div itemScope itemType="https://schema.org/PostalAddress" itemProp="address">
+            <h3 className="text-lg font-semibold mb-4 text-[var(--text)]">Website Designer Contact</h3>
+            <ul className="space-y-2 text-[var(--text-muted)]">
+              <li itemProp="telephone">
+                <a href="tel:+2349061404264" className="hover:text-[var(--primary-neon)]">
+                  +234 906 140 4264 (Call and WhatsApp)
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="border-t border-[var(--border)] mt-12 pt-8 text-center text-[var(--text-muted)]">

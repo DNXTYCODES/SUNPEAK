@@ -4,7 +4,11 @@ import { assets } from '../assets/assets';
 
 const BackgroundSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [assets.solarteam, assets.solar7, assets.solar5, assets.cert];
+  const slides = [assets.solarteam,
+     assets.solar7,
+    //   assets.solar5,
+    //    assets.cert
+      ];
   const altTexts = [
     "SunPeak solar installation team working in Benin, Edo Nigeria",
     "Professional solar panel installation by SunPeak in Benin City",
@@ -116,7 +120,7 @@ const HeroSection = () => {
                 <div className="w-3/4 h-3/4 bg-[var(--primary-neon)]/10 rounded-full animate-pulse" />
               </div>
               <img 
-                src={assets.solar6} 
+                src={assets.solar4} 
                 alt="High-efficiency solar panels available in Benin, Nigeria" 
                 className="relative z-10 w-full h-full object-contain animate-float" 
                 itemProp="image"

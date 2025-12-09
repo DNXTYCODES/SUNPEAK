@@ -19,7 +19,7 @@ const TrainingPreview = () => {
       gallery: [
         assets.trainingimg1,
         assets.trainingimg2,
-        assets.trainingimg3,
+        // assets.trainingimg3,
       ],
       icon: (
         <svg className="w-8 h-8 text-[var(--primary-neon)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,9 +34,9 @@ const TrainingPreview = () => {
       image: assets.trainingimg2,
       videoId: 'youtube_video_id_2',
       gallery: [
-        assets.trainingimg4,
-        assets.trainingimg5,
-        assets.trainingimg6,
+        // assets.trainingimg4,
+        // assets.trainingimg5,
+        // assets.trainingimg6,
       ],
       icon: (
         <svg className="w-8 h-8 text-[var(--primary-neon)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -13,7 +13,7 @@ const Testimonials = () => {
       text: "SunPeak transformed our power situation completely. From 2 hours of electricity daily to 24/7 solar power - life changing!",
       image: assets.solar7,
       location: "Uselu, Benin",
-      date: "2024-03-15",
+      date: "2025-10-15",
       rating: 5
     },
     {
@@ -22,7 +22,7 @@ const Testimonials = () => {
       text: "Our diesel costs dropped 80% after solar installation. Best investment for our Benin restaurant!",
       image: assets.solar8,
       location: "Ugbowo, Benin",
-      date: "2024-02-28",
+      date: "2025-11-28",
       rating: 5
     },
     {
@@ -31,7 +31,7 @@ const Testimonials = () => {
       text: "1MW solar plant installed with zero downtime. Professional team that understood industrial needs in Edo State.",
       image: assets.solar2,
       location: "Sapele Road, Benin",
-      date: "2024-01-10",
+      date: "2025-11-10",
       rating: 5
     },
   ];
@@ -49,20 +49,20 @@ const Testimonials = () => {
   ];
 
   const photoTestimonials = [
+    { id: 10, image: assets.solar6, caption: "Solar installation at a manufacturing plant" },
+    { id: 3, image: assets.add3, caption: "Residential installation in Uselu, Benin" },
     { id: 1, image: assets.add1, caption: "Residential installation in Uselu, Benin" },
     { id: 2, image: assets.add2, caption: "Residential installation in Uselu, Benin" },
-    { id: 3, image: assets.add3, caption: "Residential installation in Uselu, Benin" },
     { id: 4, image: assets.add4, caption: "Residential installation in Uselu, Benin" },
-    { id: 5, image: assets.solar1, caption: "Residential installation in Ugbowo, Benin" },
-    { id: 6, image: assets.solar2, caption: "Commercial installation at Sapele Road" },
-    { id: 7, image: assets.solar3, caption: "Industrial solar plant" },
-    { id: 8, image: assets.solar4, caption: "Home solar system" },
-    { id: 9, image: assets.solar5, caption: "Restaurant solar setup" },
-    { id: 10, image: assets.solar6, caption: "Solar installation at a manufacturing plant" },
-    { id: 11, image: assets.solar7, caption: "Homeowner enjoying 24/7 power" },
+    // { id: 5, image: assets.solar1, caption: "Residential installation in Ugbowo, Benin" },
+    // { id: 6, image: assets.solar2, caption: "Commercial installation at Sapele Road" },
+    // { id: 7, image: assets.solar3, caption: "Industrial solar plant" },
+    // { id: 8, image: assets.solar4, caption: "Home solar system" },
+    // { id: 9, image: assets.solar5, caption: "Restaurant solar setup" },
+    // { id: 11, image: assets.solar7, caption: "Homeowner enjoying 24/7 power" },
     { id: 12, image: assets.solar8, caption: "Before and after solar installation" },
-    { id: 13, image: assets.solar9, caption: "Solar panels on residential roof" },
-    { id: 14, image: assets.solar10, caption: "Large-scale commercial installation" },
+    // { id: 13, image: assets.solar9, caption: "Solar panels on residential roof" },
+    // { id: 14, image: assets.solar10, caption: "Large-scale commercial installation" },
   ];
 
   const info = [
@@ -204,7 +204,7 @@ const Testimonials = () => {
           </div>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {photoTestimonials.slice(0, showAllPhotos ? photoTestimonials.length : 8).map((photo, index) => (
+            {photoTestimonials.slice(0, showAllPhotos ? photoTestimonials.length : 3).map((photo, index) => (
               <div 
                 key={photo.id}
                 className="group relative overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--card-bg)] shadow-sm transition-all duration-300 hover:shadow-lg hover:border-[var(--primary-neon)] cursor-pointer"
@@ -223,7 +223,7 @@ const Testimonials = () => {
             ))}
           </div>
           
-          {photoTestimonials.length > 8 && (
+          {photoTestimonials.length > 3 && (
             <div className="text-center mt-8">
               <ToggleButton
                 expanded={showAllPhotos}
@@ -241,9 +241,9 @@ const Testimonials = () => {
             <h3 className="text-2xl md:text-3xl font-bold text-[var(--text)]">
               Solar Package <span className="text-[var(--primary-neon)]">Prices</span>
             </h3>
-            <div className="text-sm text-[var(--text-muted)]">
+            {/* <div className="text-sm text-[var(--text-muted)]">
               {info.length} packages available
-            </div>
+            </div> */}
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

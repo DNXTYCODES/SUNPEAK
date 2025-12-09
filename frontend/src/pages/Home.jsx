@@ -42,12 +42,16 @@ const Home = () => {
       {/* Solar Packages */}
       <SolarPackages />
       
+          <OurTeam /> 
+          <TrainingPreview />
+          <ServicesHighlight />
+      
       {/* Solar Tools */}
       <section aria-labelledby="solar-tools-heading" className="py-12 bg-gray-100">
         <h2 id="solar-tools-heading" className="sr-only">Solar Tools and Calculators</h2>
         <div className="container mx-auto">
-          <Chatbot/>
-          <SolarCalculator />
+          {/* <Chatbot/> */}
+          {/* <SolarCalculator /> */}
         </div>
       </section>
       
@@ -56,8 +60,6 @@ const Home = () => {
         <h2 id="services-section-heading" className="sr-only">Solar Services in Benin</h2>
         <div className="container mx-auto">
           <ReferralTeaser />
-          <TrainingPreview />
-          <ServicesHighlight />
         </div>
       </section>
       
@@ -65,7 +67,6 @@ const Home = () => {
       <section aria-labelledby="company-info-heading" className="py-12 bg-gray-100">
         <h2 id="company-info-heading" className="sr-only">About SunPeak Solar</h2>
         <div className="container mx-auto">
-          <OurTeam /> 
           <HomeFAQ />
           <USPsection />
         </div>
