@@ -1,5 +1,6 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Home from "./pages/Home";
 import Collection from "./pages/Collection";
 import About from "./pages/About";
@@ -17,13 +18,34 @@ import TrainingPrograms from "./pages/TrainingPrograms";
 import SolarPackagesPage from "./pages/SolarPackagesPage";
 import SolarCalculatorPage from "./pages/SolarCalculatorPage";
 import { FaWhatsapp, FaPhone } from "react-icons/fa";
+import { initializeGA, trackPageView } from "./utils/googleAnalytics";
 
 const App = () => {
-  
+  const location = useLocation();
+
+  // Initialize Google Analytics on component mount
+  useEffect(() => {
+    // Replace 'G-XXXXXXXXXX' with your actual Google Analytics Measurement ID
+    const measurementId = "G-E9M8N54M96";
+
+    // Only initialize if measurement ID is set (not the placeholder)
+    if (measurementId && measurementId !== "G-E9M8N54M96") {
+      initializeGA(measurementId);
+      window.GA_MEASUREMENT_ID = measurementId;
+    }
+  }, []);
+
+  // Track page views when location changes
+  useEffect(() => {
+    if (window.gtag) {
+      trackPageView(location.pathname, document.title);
+    }
+  }, [location]);
+
   return (
-    <div 
+    <div
       className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)] transition-colors duration-300"
-      itemScope 
+      itemScope
       itemType="https://schema.org/WebSite"
     >
       {/* Structured Data for Website */}
@@ -31,125 +53,126 @@ const App = () => {
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "name": "SunPeak Solar Services",
-          "url": "https://sunpeak.com.ng",
-          "potentialAction": {
+          name: "SunPeak Solar Services",
+          url: "https://sunpeak.com.ng",
+          potentialAction: {
             "@type": "SearchAction",
-            "target": "https://sunpeak.com.ng/collection?q={search_term_string}",
-            "query-input": "required name=search_term_string"
+            target: "https://sunpeak.com.ng/collection?q={search_term_string}",
+            "query-input": "required name=search_term_string",
           },
-          "description": "Leading solar services provider in Benin, Nigeria offering solar installation, products, training and instant cost estimates",
-          "inLanguage": "en-NG"
+          description:
+            "Leading solar services provider in Benin, Nigeria offering solar installation, products, training and instant cost estimates",
+          inLanguage: "en-NG",
         })}
       </script>
-      
-      <a 
-        href="#main-content" 
+
+      <a
+        href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:bg-[var(--primary-neon)] focus:text-black focus:p-4 focus:z-50"
       >
         Skip to main content
       </a>
-      
-      <ToastContainer 
+
+      <ToastContainer
         position="top-center"
         toastClassName="bg-[var(--card-bg)] border border-[var(--border)] rounded-xl backdrop-blur-sm"
         bodyClassName="text-[var(--text)]"
         progressClassName="bg-[var(--primary-neon)]"
       />
-      
+
       <Navbar />
-      
+
       <main id="main-content" className="flex-1">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full">
           <SearchBar />
-          
+
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route 
-              path="/solarpackages" 
+            <Route
+              path="/solarpackages"
               element={
                 <div itemScope itemType="https://schema.org/OfferCatalog">
                   <SolarPackagesPage />
                 </div>
-              } 
+              }
             />
-            <Route 
-              path="/solarcalculator" 
+            <Route
+              path="/solarcalculator"
               element={
                 <div itemScope itemType="https://schema.org/WebApplication">
                   <SolarCalculatorPage />
                 </div>
-              } 
+              }
             />
-            <Route 
-              path="/training" 
+            <Route
+              path="/training"
               element={
                 <div itemScope itemType="https://schema.org/EducationEvent">
                   <TrainingPrograms />
                 </div>
-              } 
+              }
             />
-            <Route 
-              path="/about" 
+            <Route
+              path="/about"
               element={
                 <div itemScope itemType="https://schema.org/AboutPage">
                   <About />
                 </div>
-              } 
+              }
             />
-            <Route 
-              path="/contact" 
+            <Route
+              path="/contact"
               element={
                 <div itemScope itemType="https://schema.org/ContactPage">
                   <Contact />
                 </div>
-              } 
+              }
             />
             <Route path="/player/:playerId" element={<Player />} />
-            <Route 
-              path="/ourwork" 
+            <Route
+              path="/ourwork"
               element={
                 <div itemScope itemType="https://schema.org/PortfolioPage">
                   <OurWork />
                 </div>
-              } 
+              }
             />
-            <Route 
-              path="/services" 
+            <Route
+              path="/services"
               element={
                 <div itemScope itemType="https://schema.org/Service">
                   <Services />
                 </div>
-              } 
+              }
             />
-            <Route 
-              path="/collection" 
+            <Route
+              path="/collection"
               element={
                 <div itemScope itemType="https://schema.org/ItemList">
                   <Collection />
                 </div>
-              } 
+              }
             />
-            <Route 
-              path="/product/:productId" 
+            <Route
+              path="/product/:productId"
               element={
                 <div itemScope itemType="https://schema.org/Product">
                   <Product />
                 </div>
-              } 
+              }
             />
           </Routes>
         </div>
       </main>
 
       <Footer />
-      
+
       {/* Floating Contact Bubbles */}
       <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-4">
         {/* WhatsApp Bubble */}
-        <a 
-          href="https://wa.me/2348134553751" 
-          target="_blank" 
+        <a
+          href="https://wa.me/2348134553751"
+          target="_blank"
           rel="noopener noreferrer"
           className="w-14 h-14 rounded-full bg-green-600 flex items-center justify-center shadow-lg hover:shadow-xl transition-all group animate-bounce-slow"
           aria-label="Chat with us on WhatsApp"
@@ -159,10 +182,10 @@ const App = () => {
             Chat with us
           </span>
         </a>
-        
+
         {/* Phone Call Bubble */}
-        <a 
-          href="tel:+2348134553751" 
+        <a
+          href="tel:+2348134553751"
           className="w-14 h-14 rounded-full bg-[var(--primary-neon)] flex items-center justify-center shadow-lg hover:shadow-xl transition-all group animate-bounce-slow"
           aria-label="Call us"
           style={{ animationDelay: "0.2s" }}
@@ -178,21 +201,6 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React from "react";
 // import { Routes, Route } from "react-router-dom";
@@ -213,11 +221,11 @@ export default App;
 // import SolarCalculatorPage from "./pages/SolarCalculatorPage";
 
 // const App = () => {
-  
+
 //   return (
-//     <div 
+//     <div
 //       className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)] transition-colors duration-300"
-//       itemScope 
+//       itemScope
 //       itemType="https://schema.org/WebSite"
 //     >
 //       {/* Structured Data for Website */}
@@ -236,93 +244,93 @@ export default App;
 //           "inLanguage": "en-NG"
 //         })}
 //       </script>
-      
-//       <a 
-//         href="#main-content" 
+
+//       <a
+//         href="#main-content"
 //         className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:bg-[var(--primary-neon)] focus:text-black focus:p-4 focus:z-50"
 //       >
 //         Skip to main content
 //       </a>
-      
-//       <ToastContainer 
+
+//       <ToastContainer
 //         position="top-center"
 //         toastClassName="bg-[var(--card-bg)] border border-[var(--border)] rounded-xl backdrop-blur-sm"
 //         bodyClassName="text-[var(--text)]"
 //         progressClassName="bg-[var(--primary-neon)]"
 //       />
-      
+
 //       <Navbar />
-      
+
 //       <main id="main-content" className="flex-1">
 //         <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl w-full">
 //           <SearchBar />
-          
+
 //           <Routes>
 //             <Route path="/" element={<Home />} />
-//             <Route 
-//               path="/solarpackages" 
+//             <Route
+//               path="/solarpackages"
 //               element={
 //                 <div itemScope itemType="https://schema.org/OfferCatalog">
 //                   <SolarPackagesPage />
 //                 </div>
-//               } 
+//               }
 //             />
-//             <Route 
-//               path="/solarcalculator" 
+//             <Route
+//               path="/solarcalculator"
 //               element={
 //                 <div itemScope itemType="https://schema.org/WebApplication">
 //                   <SolarCalculatorPage />
 //                 </div>
-//               } 
+//               }
 //             />
-//             <Route 
-//               path="/training" 
+//             <Route
+//               path="/training"
 //               element={
 //                 <div itemScope itemType="https://schema.org/EducationEvent">
 //                   <TrainingPrograms />
 //                 </div>
-//               } 
+//               }
 //             />
-//             <Route 
-//               path="/about" 
+//             <Route
+//               path="/about"
 //               element={
 //                 <div itemScope itemType="https://schema.org/AboutPage">
 //                   <About />
 //                 </div>
-//               } 
+//               }
 //             />
-//             <Route 
-//               path="/contact" 
+//             <Route
+//               path="/contact"
 //               element={
 //                 <div itemScope itemType="https://schema.org/ContactPage">
 //                   <Contact />
 //                 </div>
-//               } 
+//               }
 //             />
 //             <Route path="/player/:playerId" element={<Player />} />
-//             <Route 
-//               path="/services" 
+//             <Route
+//               path="/services"
 //               element={
 //                 <div itemScope itemType="https://schema.org/Service">
 //                   <Services />
 //                 </div>
-//               } 
+//               }
 //             />
-//             <Route 
-//               path="/collection" 
+//             <Route
+//               path="/collection"
 //               element={
 //                 <div itemScope itemType="https://schema.org/ItemList">
 //                   <Collection />
 //                 </div>
-//               } 
+//               }
 //             />
-//             <Route 
-//               path="/product/:productId" 
+//             <Route
+//               path="/product/:productId"
 //               element={
 //                 <div itemScope itemType="https://schema.org/Product">
 //                   <Product />
 //                 </div>
-//               } 
+//               }
 //             />
 //           </Routes>
 //         </div>

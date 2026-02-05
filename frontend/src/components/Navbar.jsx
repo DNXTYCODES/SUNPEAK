@@ -1,53 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { assets } from '../assets/assets';
+import React, { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { assets } from "../assets/assets";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [theme, setTheme] = useState('light'); // Default to light theme
+  const [theme, setTheme] = useState("light"); // Default to light theme
 
   const menuItems = [
-    { name: 'Home', path: '/' },
-    { name: 'About_Us', path: '/about' },
-    { name: 'Our_Work', path: '/ourwork' },
-    { name: 'Services', path: '/services' },
-    { name: 'Products', path: '/collection' },
-    { name: 'Solar_Packages', path: '/solarpackages' },
-    { name: 'Training', path: '/training' },
-    { name: 'Solar_Calculator', path: '/solarcalculator' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About_Us", path: "/about" },
+    { name: "Our_Work", path: "/ourwork" },
+    { name: "Services", path: "/services" },
+    { name: "Products", path: "/collection" },
+    { name: "Solar_Packages", path: "/solarpackages" },
+    { name: "Training", path: "/training" },
+    { name: "Solar_Calculator", path: "/solarcalculator" },
+    { name: "Contact", path: "/contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    document.body.setAttribute('data-theme', theme); // Set body theme on mount and whenever theme changes
+    document.body.setAttribute("data-theme", theme); // Set body theme on mount and whenever theme changes
   }, [theme]);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
   };
 
   return (
     <>
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md bg-[var(--bg)/70]' : 'backdrop-blur-none'} border-b border-[var(--border)]`}>
+      <nav
+        className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "backdrop-blur-md bg-[var(--bg)/70]" : "backdrop-blur-none"} border-b border-[var(--border)]`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 relative">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className="flex items-center gap-2 group animate-fadeIn z-50"
             >
-              <img 
-                src={assets.sunpeaklogo} 
-                alt="Sun Peak Energy Solutions" 
+              <img
+                src={assets.sunpeaklogo}
+                alt="Sun Peak Energy Solutions"
                 className="h-10 w-10"
               />
               <span className="text-2xl font-bold text-[var(--primary-neon)] font-['Orbitron']">
@@ -58,14 +60,20 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center gap-8">
               <ul className="flex items-center gap-6">
                 {menuItems.map((item, index) => (
-                  <li key={index} className="animate-fadeIn" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <li
+                    key={index}
+                    className="animate-fadeIn"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
                     <NavLink
                       to={item.path}
-                      className={({ isActive }) => 
+                      className={({ isActive }) =>
                         `px-3 py-2 text-sm font-medium transition-colors
-                        ${isActive 
-                          ? 'text-[var(--primary-neon)] border-b-2 border-[var(--primary-neon)]' 
-                          : 'text-[var(--text)] hover:text-[var(--primary-neon)]'}`
+                        ${
+                          isActive
+                            ? "text-[var(--primary-neon)] border-b-2 border-[var(--primary-neon)]"
+                            : "text-[var(--text)] hover:text-[var(--primary-neon)]"
+                        }`
                       }
                     >
                       {item.name}
@@ -78,28 +86,38 @@ const Navbar = () => {
                 <button className="px-4 py-2 bg-[var(--primary-neon)] text-[var(--secondary-dark)] rounded-lg font-bold hover:shadow-glow transition-all">
                   Get Free Quote
                 </button>
-                <button 
+                <button
                   onClick={toggleTheme}
                   className="p-2 rounded-lg hover:bg-[var(--primary-neon)/10] transition-colors"
                 >
-                  {theme === 'dark' ? '🌞' : '🌙'}
+                  {theme === "dark" ? "🌞" : "🌙"}
                 </button>
               </div>
             </div>
 
             <div className="lg:hidden flex items-center gap-4">
-              <button 
+              <button
                 onClick={toggleTheme}
                 className="text-sm font-medium text-[var(--text)] px-3 py-1 rounded-lg hover:bg-[var(--primary-neon)/10] transition-colors"
               >
-                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                {theme === "dark" ? "Light Mode" : "Dark Mode"}
               </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2 rounded-lg text-[var(--text)] hover:bg-[var(--primary-neon)/10]"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
               </button>
             </div>
@@ -107,12 +125,16 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className={`lg:hidden fixed inset-0 z-40 transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div
+        className={`lg:hidden fixed inset-0 z-40 transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
         <div className="absolute inset-0 bg-[var(--bg)/95] backdrop-blur-2xl pt-20">
           <div className="flex flex-col h-full p-6">
             <div className="flex justify-between items-center mb-8">
-              <span className="text-2xl font-bold text-[var(--primary-neon)]">Menu</span>
-              <button 
+              <span className="text-2xl font-bold text-[var(--primary-neon)]">
+                Menu
+              </span>
+              <button
                 onClick={() => setIsMenuOpen(false)}
                 className="p-2 text-[var(--text)] hover:text-[var(--primary-neon)]"
               >
@@ -126,11 +148,13 @@ const Navbar = () => {
                   <NavLink
                     to={item.path}
                     onClick={() => setIsMenuOpen(false)}
-                    className={({ isActive }) => 
+                    className={({ isActive }) =>
                       `block px-4 py-3 rounded-lg transition-colors
-                      ${isActive 
-                        ? 'bg-[var(--primary-neon)] text-[var(--secondary-dark)]' 
-                        : 'text-[var(--text)] hover:bg-[var(--primary-neon)/10]'}`
+                      ${
+                        isActive
+                          ? "bg-[var(--primary-neon)] text-[var(--secondary-dark)]"
+                          : "text-[var(--text)] hover:bg-[var(--primary-neon)/10]"
+                      }`
                     }
                   >
                     {item.name}
@@ -146,11 +170,11 @@ const Navbar = () => {
               <button className="w-full py-3 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg font-bold hover:shadow-glow">
                 Training Enrollment
               </button>
-              <button 
+              <button
                 onClick={toggleTheme}
                 className="w-full py-3 text-[var(--text)] rounded-lg font-bold hover:bg-[var(--primary-neon)/10] transition-colors"
               >
-                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                {theme === "dark" ? "Light Mode" : "Dark Mode"}
               </button>
             </div>
           </div>
@@ -163,39 +187,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState, useEffect } from 'react';
 // import { Link, NavLink } from 'react-router-dom';
@@ -236,13 +227,13 @@ export default Navbar;
 //         {/* <div className="flex items-center justify-between h-20 absolute inset-0 bg-[var(--bg)/95] backdrop-blur-xl"> */}
 //         <div className="flex items-center justify-between h-20 absolute inset-0 bg-[var(--bg)/95] backdrop-blur-xl">
 //           {/* Logo */}
-//           <Link 
-//             to="/" 
+//           <Link
+//             to="/"
 //             className="flex items-center gap-2 group animate-fadeIn"
 //           >
-//             <img 
-//               src={assets.sunpeaklogo} 
-//               alt="Sun Peak Energy Solutions" 
+//             <img
+//               src={assets.sunpeaklogo}
+//               alt="Sun Peak Energy Solutions"
 //               className="h-10 w-10"
 //             />
 //             <span className="text-2xl font-bold text-[var(--primary-neon)] font-['Orbitron']">
@@ -257,10 +248,10 @@ export default Navbar;
 //                 <li key={index} className="animate-fadeIn" style={{ animationDelay: `${index * 0.1}s` }}>
 //                   <NavLink
 //                     to={item.path}
-//                     className={({ isActive }) => 
+//                     className={({ isActive }) =>
 //                       `px-3 py-2 text-sm font-medium transition-colors
-//                       ${isActive 
-//                         ? 'text-[var(--primary-neon)] border-b-2 border-[var(--primary-neon)]' 
+//                       ${isActive
+//                         ? 'text-[var(--primary-neon)] border-b-2 border-[var(--primary-neon)]'
 //                         : 'text-[var(--text)] hover:text-[var(--primary-neon)]'}`
 //                     }
 //                   >
@@ -274,7 +265,7 @@ export default Navbar;
 //               <button className="px-4 py-2 bg-[var(--primary-neon)] text-[var(--secondary-dark)] rounded-lg font-bold hover:shadow-glow transition-all">
 //                 Get Free Quote
 //               </button>
-//               <button 
+//               <button
 //                 onClick={toggleTheme}
 //                 className="p-2 rounded-lg hover:bg-[var(--primary-neon)/10] transition-colors"
 //               >
@@ -285,7 +276,7 @@ export default Navbar;
 
 //           {/* Mobile Menu Button */}
 //           <div className="lg:hidden flex items-center gap-4">
-//             <button 
+//             <button
 //               onClick={toggleTheme}
 //               className="p-2 text-sm font-medium text-[var(--text)] lg:hidden"
 //             >
@@ -309,7 +300,7 @@ export default Navbar;
 //           <div className="flex flex-col h-full p-6">
 //             <div className="flex justify-between items-center mb-8">
 //               <span className="text-2xl font-bold text-[var(--primary-neon)]">Menu</span>
-//               <button 
+//               <button
 //                 onClick={() => setIsMenuOpen(false)}
 //                 className="p-2 text-[var(--text)] hover:text-[var(--primary-neon)]"
 //               >
@@ -323,10 +314,10 @@ export default Navbar;
 //                   <NavLink
 //                     to={item.path}
 //                     onClick={() => setIsMenuOpen(false)}
-//                     className={({ isActive }) => 
+//                     className={({ isActive }) =>
 //                       `block px-4 py-3 rounded-lg transition-colors
-//                       ${isActive 
-//                         ? 'bg-[var(--primary-neon)] text-[var(--secondary-dark)]' 
+//                       ${isActive
+//                         ? 'bg-[var(--primary-neon)] text-[var(--secondary-dark)]'
 //                         : 'text-[var(--text)] hover:bg-[var(--primary-neon)/10]'}`
 //                     }
 //                   >
@@ -343,7 +334,7 @@ export default Navbar;
 //               <button className="w-full py-3 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg font-bold">
 //                 Training Enrollment
 //               </button>
-//               <button 
+//               <button
 //                 onClick={toggleTheme}
 //                 className="w-full py-3 text-[var(--text)] rounded-lg font-bold hover:bg-[var(--primary-neon)/10] transition-colors"
 //               >
