@@ -19,26 +19,37 @@ import SolarPackagesPage from "./pages/SolarPackagesPage";
 import SolarCalculatorPage from "./pages/SolarCalculatorPage";
 import { FaWhatsapp, FaPhone } from "react-icons/fa";
 import { initializeGA, trackPageView } from "./utils/googleAnalytics";
+import "./utils/browserCompat"; // Load polyfills
 
 const App = () => {
   const location = useLocation();
 
   // Initialize Google Analytics on component mount
   useEffect(() => {
-    // Replace 'G-XXXXXXXXXX' with your actual Google Analytics Measurement ID
-    const measurementId = "G-E9M8N54M96";
+    try {
+      // Replace 'G-XXXXXXXXXX' with your actual Google Analytics Measurement ID
+      const measurementId = "G-E9M8N54M96";
 
-    // Only initialize if measurement ID is set (not the placeholder)
-    if (measurementId && measurementId !== "G-XXXXXXXXXX") {
-      initializeGA(measurementId);
-      window.GA_MEASUREMENT_ID = measurementId;
+      // Only initialize if measurement ID is set (not the placeholder)
+      if (measurementId && measurementId !== "G-XXXXXXXXXX") {
+        initializeGA(measurementId);
+        window.GA_MEASUREMENT_ID = measurementId;
+      }
+    } catch (err) {
+      console.warn("Failed to initialize analytics:", err);
+      // Site continues even if analytics fails
     }
   }, []);
 
   // Track page views when location changes
   useEffect(() => {
-    if (window.gtag) {
-      trackPageView(location.pathname, document.title);
+    try {
+      if (window.gtag) {
+        trackPageView(location.pathname, document.title);
+      }
+    } catch (err) {
+      console.warn("Failed to track page view:", err);
+      // Site continues even if tracking fails
     }
   }, [location]);
 

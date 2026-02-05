@@ -2,38 +2,65 @@
 // This file sets up Google Analytics 4 for tracking visitor data
 
 export const initializeGA = (measurementId) => {
-  // Add Google Analytics script to the page
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-  document.head.appendChild(script);
+  try {
+    // Add Google Analytics script to the page with error handling
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    
+    // Add error handler to prevent script from blocking site
+    script.onerror = () => {
+      console.warn("Google Analytics script failed to load, but site will continue to work");
+    };
+    
+    document.head.appendChild(script);
 
-  // Initialize gtag
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    window.dataLayer.push(arguments);
+    // Initialize gtag with delay to ensure script loads
+    setTimeout(() => {
+      try {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          window.dataLayer.push(arguments);
+        }
+        window.gtag = gtag;
+        gtag("js", new Date());
+        gtag("config", measurementId, {
+          page_path: window.location.pathname,
+        });
+      } catch (err) {
+        console.warn("Google Analytics initialization failed:", err);
+        // Site continues to work even if GA fails
+      }
+    }, 100);
+  } catch (err) {
+    console.warn("Failed to load Google Analytics:", err);
+    // Site continues to work even if GA fails
   }
-  window.gtag = gtag;
-  gtag("js", new Date());
-  gtag("config", measurementId, {
-    page_path: window.location.pathname,
-  });
 };
 
 // Track page views
 export const trackPageView = (pagePath, pageTitle) => {
-  if (window.gtag) {
-    window.gtag("config", window.GA_MEASUREMENT_ID, {
-      page_path: pagePath,
-      page_title: pageTitle,
-    });
+  try {
+    if (window.gtag && window.GA_MEASUREMENT_ID) {
+      window.gtag("config", window.GA_MEASUREMENT_ID, {
+        page_path: pagePath,
+        page_title: pageTitle,
+      });
+    }
+  } catch (err) {
+    // Silently fail - site should continue working
+    console.warn("Page view tracking failed:", err);
   }
 };
 
 // Track custom events
 export const trackEvent = (eventName, eventParams = {}) => {
-  if (window.gtag) {
-    window.gtag("event", eventName, eventParams);
+  try {
+    if (window.gtag) {
+      window.gtag("event", eventName, eventParams);
+    }
+  } catch (err) {
+    console.warn("Event tracking failed:", err);
   }
 };
 
