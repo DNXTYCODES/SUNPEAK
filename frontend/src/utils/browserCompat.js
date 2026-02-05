@@ -3,13 +3,13 @@
 
 // Polyfill for Object.assign if needed
 if (!Object.assign) {
-  Object.defineProperty(Object, 'assign', {
+  Object.defineProperty(Object, "assign", {
     enumerable: false,
     configurable: true,
     writable: true,
-    value: function(target) {
+    value: function (target) {
       if (target === undefined || target === null) {
-        throw new TypeError('Cannot convert undefined or null to object');
+        throw new TypeError("Cannot convert undefined or null to object");
       }
 
       var output = Object(target);
@@ -24,7 +24,7 @@ if (!Object.assign) {
         }
       }
       return output;
-    }
+    },
   });
 }
 
@@ -33,12 +33,16 @@ if (!Array.from) {
   Array.from = (function () {
     var toStr = Object.prototype.toString;
     var isCallable = function (fn) {
-      return typeof fn === 'function' || toStr.call(fn) === '[object Function]';
+      return typeof fn === "function" || toStr.call(fn) === "[object Function]";
     };
     var toInteger = function (value) {
       var number = Number(value);
-      if (isNaN(number)) { return 0; }
-      if (number === 0 || !isFinite(number)) { return number; }
+      if (isNaN(number)) {
+        return 0;
+      }
+      if (number === 0 || !isFinite(number)) {
+        return number;
+      }
       return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
     };
     var maxSafeInteger = Math.pow(2, 53) - 1;
@@ -52,14 +56,18 @@ if (!Array.from) {
       var items = Object(arrayLike);
 
       if (arrayLike == null) {
-        throw new TypeError('Array.from requires an array-like object - not null or undefined');
+        throw new TypeError(
+          "Array.from requires an array-like object - not null or undefined",
+        );
       }
 
       var mapFn = arguments.length > 1 ? arguments[1] : void undefined;
       var T;
-      if (typeof mapFn !== 'undefined') {
+      if (typeof mapFn !== "undefined") {
         if (!isCallable(mapFn)) {
-          throw new TypeError('Array.from: when provided, the second argument must be a function');
+          throw new TypeError(
+            "Array.from: when provided, the second argument must be a function",
+          );
         }
         if (arguments.length > 2) {
           T = arguments[2];
@@ -73,13 +81,19 @@ if (!Array.from) {
 
       while (k < len) {
         kValue = items[k];
-        if (typeof mapFn === 'undefined') {
-          A[k] = typeof kValue === 'undefined' ? null : kValue;
+        if (typeof mapFn === "undefined") {
+          A[k] = typeof kValue === "undefined" ? null : kValue;
         } else {
-          if (typeof T === 'undefined') {
-            A[k] = typeof mapFn === 'function' ? mapFn(kValue, k) : mapFn.call(T, kValue, k);
+          if (typeof T === "undefined") {
+            A[k] =
+              typeof mapFn === "function"
+                ? mapFn(kValue, k)
+                : mapFn.call(T, kValue, k);
           } else {
-            A[k] = typeof mapFn === 'function' ? mapFn(kValue, k) : mapFn.call(T, kValue, k);
+            A[k] =
+              typeof mapFn === "function"
+                ? mapFn(kValue, k)
+                : mapFn.call(T, kValue, k);
           }
         }
         k += 1;
@@ -87,17 +101,17 @@ if (!Array.from) {
       A.length = len;
       return A;
     };
-  }());
+  })();
 }
 
 // Fetch API polyfill detection
 export const fetchSupported = () => {
-  return typeof fetch !== 'undefined';
+  return typeof fetch !== "undefined";
 };
 
 // Promise polyfill detection
 export const promiseSupported = () => {
-  return typeof Promise !== 'undefined';
+  return typeof Promise !== "undefined";
 };
 
 // Check if browser is supported
@@ -107,7 +121,7 @@ export const isBrowserSupported = () => {
 
 // Safe console logging that doesn't break on old IE
 export const safeLog = (message, data) => {
-  if (typeof console !== 'undefined' && console.log) {
+  if (typeof console !== "undefined" && console.log) {
     if (data) {
       console.log(message, data);
     } else {
@@ -118,7 +132,7 @@ export const safeLog = (message, data) => {
 
 // Safe error handling
 export const safeError = (message, error) => {
-  if (typeof console !== 'undefined' && console.error) {
+  if (typeof console !== "undefined" && console.error) {
     if (error) {
       console.error(message, error);
     } else {

@@ -7,12 +7,14 @@ export const initializeGA = (measurementId) => {
     const script = document.createElement("script");
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-    
+
     // Add error handler to prevent script from blocking site
     script.onerror = () => {
-      console.warn("Google Analytics script failed to load, but site will continue to work");
+      console.warn(
+        "Google Analytics script failed to load, but site will continue to work",
+      );
     };
-    
+
     document.head.appendChild(script);
 
     // Initialize gtag with delay to ensure script loads
