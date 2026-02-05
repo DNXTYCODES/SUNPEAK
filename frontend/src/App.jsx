@@ -29,7 +29,7 @@ const App = () => {
     const measurementId = "G-E9M8N54M96";
 
     // Only initialize if measurement ID is set (not the placeholder)
-    if (measurementId && measurementId !== "G-E9M8N54M96") {
+    if (measurementId && measurementId !== "G-XXXXXXXXXX") {
       initializeGA(measurementId);
       window.GA_MEASUREMENT_ID = measurementId;
     }
