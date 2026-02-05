@@ -5,6 +5,7 @@ import Collection from "./pages/Collection";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Product from "./pages/Product";
+import OurWork from "./pages/OurWork";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SearchBar from "./components/SearchBar";
@@ -105,6 +106,14 @@ const App = () => {
               } 
             />
             <Route path="/player/:playerId" element={<Player />} />
+            <Route 
+              path="/ourwork" 
+              element={
+                <div itemScope itemType="https://schema.org/PortfolioPage">
+                  <OurWork />
+                </div>
+              } 
+            />
             <Route 
               path="/services" 
               element={

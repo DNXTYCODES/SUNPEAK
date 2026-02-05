@@ -2,6 +2,82 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { assets } from '../assets/assets';
 
+const ContactModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  const whatsappNumber = '+2348134553751';
+  const whatsappMessage = 'Hi SunPeak! I would like to know more about your solar solutions.';
+  const phoneNumber = '+2348134553751';
+
+  return (
+    <>
+      {/* Backdrop */}
+      <div 
+        className="fixed inset-0 bg-black/50 z-40 transition-opacity duration-300"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+      
+      {/* Modal */}
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="bg-[var(--card-bg)] rounded-2xl shadow-2xl max-w-md w-full border border-[var(--border)] animate-fadeIn">
+          <div className="p-8">
+            {/* Close Button */}
+            <button
+              onClick={onClose}
+              className="float-right text-[var(--text-muted)] hover:text-[var(--text)] transition-colors"
+              aria-label="Close contact modal"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <h3 className="text-2xl font-bold text-[var(--text)] mb-2 clear-right">
+              Get in Touch With Us
+            </h3>
+            <p className="text-[var(--text-muted)] mb-8">
+              Choose how you'd like to contact SunPeak today
+            </p>
+
+            <div className="space-y-4">
+              {/* WhatsApp Button */}
+              <a
+                href={`https://wa.me/${whatsappNumber.replace(/\D/g, '')}?text=${encodeURIComponent(whatsappMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-green-500 hover:bg-green-600 text-white rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
+                aria-label="Contact SunPeak via WhatsApp"
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.718.738 5.33 2.139 7.592l-2.27 6.994 7.153-2.287c2.2 1.186 4.662 1.811 7.223 1.811 9.738 0 17.683-7.316 17.683-16.29a16.094 16.094 0 00-4.117-10.769 16.108 16.108 0 00-11.635-4.85" />
+                </svg>
+                Chat on WhatsApp
+              </a>
+
+              {/* Call Button */}
+              <a
+                href={`tel:${phoneNumber}`}
+                className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-[var(--primary-neon)] hover:bg-[var(--primary-neon)/80] text-[var(--secondary-dark)] rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
+                aria-label="Call SunPeak"
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                Call Us Now
+              </a>
+            </div>
+
+            <p className="text-center text-sm text-[var(--text-muted)] mt-6">
+              Available Monday - Friday, 8AM - 6PM WAT
+            </p>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
 const BackgroundSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [assets.solarteam,
@@ -45,6 +121,8 @@ const BackgroundSlideshow = () => {
 };
 
 const HeroSection = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   return (
     <section 
       className="min-h-screen relative overflow-hidden bg-[var(--bg)] transition-colors duration-300"
@@ -71,19 +149,26 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="px-8 py-4 bg-[var(--primary-neon)] text-[var(--secondary-dark)] rounded-lg hover:shadow-[0_0_30px_-5px_var(--primary-neon)] transition-all duration-300 font-bold text-lg"
+                aria-label="Contact us now via WhatsApp or phone"
+              >
+                Contact Us Now
+              </button>
               <Link
                 to="/solarcalculator"
-                className="px-8 py-4 bg-[var(--primary-neon)] text-[var(--secondary-dark)] rounded-lg hover:shadow-[0_0_30px_-5px_var(--primary-neon)] transition-all duration-300 font-bold text-lg"
+                className="px-8 py-4 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)/10] transition-all duration-300 font-bold text-lg"
                 aria-label="Get a free solar quote with our estimator tool"
               >
                 Get Free Solar Quote
               </Link>
               <Link
-                to="/collection"
-                className="px-8 py-4 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)/10] transition-all duration-300 font-bold text-lg"
-                aria-label="View our solar products collection"
+                to="/ourwork"
+                className="px-8 py-4 border-2 border-[var(--primary-neon)] text-[var(--primary-neon)] rounded-lg hover:bg-[var(--primary-neon)/10] transition-all duration-300 font-bold text-lg hidden sm:block"
+                aria-label="Check out our solar installation portfolio and past work"
               >
-                View Solar Products
+                Check Out Our Work
               </Link>
             </div>
 
@@ -129,55 +214,36 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mt-24">
-          <div 
-            className="p-8 bg-[var(--card-bg)] rounded-2xl border border-[var(--border)] backdrop-blur-lg"
-            itemScope
-            itemType="https://schema.org/EducationEvent"
+        {/* Additional Links */}
+        <div className="flex flex-col sm:flex-row gap-6 mt-12 justify-center lg:justify-start">
+          <Link
+            to="/training"
+            className="inline-flex items-center gap-2 text-[var(--primary-dark)] dark:text-[var(--primary-neon)] hover:text-[var(--primary-darker)] dark:hover:text-[var(--primary-neon)/80] font-medium transition-colors"
+            aria-label="Explore solar training courses"
           >
-            <h3 className="text-2xl font-bold text-[var(--primary-neon)] mb-4" itemProp="name">
-              Solar Training Programs
-            </h3>
-            <p className="text-[var(--text-muted)] mb-6" itemProp="description">
-              Become a certified solar technician through our hands-on training programs in Benin
-            </p>
-            <Link
-              to="/training"
-              className="inline-flex items-center gap-2 text-[var(--primary-neon)] hover:text-[var(--primary-neon)/80]"
-              aria-label="Explore solar training courses"
-            >
-              View Solar Courses
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-              </svg>
-            </Link>
-          </div>
-
-          <div 
-            className="p-8 bg-[var(--card-bg)] rounded-2xl border border-[var(--border)] backdrop-blur-lg"
-            itemScope
-            itemType="https://schema.org/Offer"
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10.5 1.5H3.75A2.25 2.25 0 001.5 3.75v12.5A2.25 2.25 0 003.75 18.5h12.5a2.25 2.25 0 002.25-2.25V9.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <path d="M6.5 10.5h7M6.5 13.5h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" fill="none"/>
+            </svg>
+            View Solar Training Programs
+          </Link>
+          <a
+            href="#referral"
+            className="inline-flex items-center gap-2 text-[var(--primary-dark)] dark:text-[var(--primary-neon)] hover:text-[var(--primary-darker)] dark:hover:text-[var(--primary-neon)/80] font-medium transition-colors"
+            aria-label="Learn about our solar referral program"
           >
-            <h3 className="text-2xl font-bold text-[var(--primary-neon)] mb-4" itemProp="name">
-              Solar Referral Program
-            </h3>
-            <p className="text-[var(--text-muted)] mb-6" itemProp="description">
-              Earn money for every solar referral. Join our partner program in Edo State
-            </p>
-            <a 
-              href="#referral" 
-              className="inline-flex items-center gap-2 text-[var(--primary-neon)] hover:text-[var(--primary-neon)/80]"
-              aria-label="Learn about our solar referral program"
-            >
-              Learn About Referrals
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
-            </a>
-          </div>
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+            </svg>
+            Join Our Referral Program
+          </a>
         </div>
       </div>
+
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </section>
   );
 };

@@ -10,6 +10,7 @@ const Navbar = () => {
   const menuItems = [
     { name: 'Home', path: '/' },
     { name: 'About_Us', path: '/about' },
+    { name: 'Our_Work', path: '/ourwork' },
     { name: 'Services', path: '/services' },
     { name: 'Products', path: '/collection' },
     { name: 'Solar_Packages', path: '/solarpackages' },
