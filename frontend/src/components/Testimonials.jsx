@@ -39,6 +39,9 @@ const Testimonials = () => {
   const videoTestimonials = [
     { id: 1, embedId: "xm33O4bcYL4", title: "SunPeak solar on the News on National Television", location: "Benin City, Edo State" },
     // { id: 1, embedId: "fQkCjTo_w7g", title: "SunPeak solar on the News on National Television", location: "Benin City, Edo State" },
+    { id: 1, embedId: "aj-ZN6G6IfA", title: "Solar installation for a school in benin city", location: "Benin City, Edo State" },
+    { id: 1, embedId: "ne0J_uf-3gc", title: "Recent solar training class at Sunpeak", location: "Benin City, Edo State" },
+    { id: 1, embedId: "NgbInijlVpE", title: "Beautiful solar installation on a roof", location: "Benin City, Edo State" },
     { id: 1, embedId: "hS4PWUW0nlM", title: "SunPeak solar customer testimonial from Benin, Edo State", location: "Benin City, Edo State" },
     { id: 2, embedId: "x5s6uIw1bo8", title: "SunPeak solar customer testimonial from Benin, Edo State", location: "Benin City, Edo State" },
     { id: 3, embedId: "bMQpewdkK5U", title: "SunPeak solar customer testimonial from Benin, Edo State", location: "Benin City, Edo State" },
@@ -51,6 +54,9 @@ const Testimonials = () => {
   const photoTestimonials = [
     { id: 10, image: assets.solar6, caption: "Solar installation at a manufacturing plant" },
     { id: 3, image: assets.add3, caption: "Residential installation in Uselu, Benin" },
+    { id: 10, image: assets.i2, caption: "Solar installation at a home" },
+    { id: 10, image: assets.i1, caption: "Solar installation at a home" },
+    { id: 10, image: assets.i3, caption: "Solar installation at a school" },
     { id: 1, image: assets.add1, caption: "Residential installation in Uselu, Benin" },
     { id: 2, image: assets.add2, caption: "Residential installation in Uselu, Benin" },
     { id: 4, image: assets.add4, caption: "Residential installation in Uselu, Benin" },

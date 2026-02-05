@@ -1,4 +1,7 @@
 
+import i1 from './i1.jpg'
+import i2 from './i2.jpg'
+import i3 from './i3.jpg'   
 import cert  from './cert.png'
 import pl2  from './pl2.png'
 import pl3  from './pl3.png'
@@ -55,6 +58,9 @@ import sunpeaklogo from './sunpeaklogo.png'
 // import cross_icon from './cross_icon.png'
 
 export const assets = {
+    i1,
+    i2,
+    i3,
     cert,
     pl1,
     pl2,
