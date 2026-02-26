@@ -108,7 +108,7 @@ const TrainingPrograms = () => {
                   Contact us for next available session
                 </p>
                 <a
-                  href="https://wa.me/2348118532900"
+                  href="https://wa.me/2348134553751"
                   className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2 bg-[var(--primary-neon)] text-[var(--bg)] rounded-lg font-medium hover:shadow-glow"
                 >
                   <FaWhatsapp /> Get Class Schedule
@@ -228,7 +228,7 @@ const TrainingPrograms = () => {
             </a>
 
             <a
-              href="tel:+2348118532900"
+              href="tel:+2348134553751"
               className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--card-bg)] hover:border-[var(--primary-neon)] transition-colors group"
             >
               <div className="flex flex-col items-center gap-3">
